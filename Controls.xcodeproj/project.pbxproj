@@ -15,6 +15,7 @@
 		2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */; };
 		2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82B22B8CFEF00235C6C /* TextViewController.m */; };
 		2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82F22B8E48E00235C6C /* WJProgressView.m */; };
+		5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38A5252313AF680093B002 /* AnimationLabel.m */; };
 		7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */; };
 		7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9E2111AE8800F55EB6 /* ViewController.m */; };
 		7CA4CCA22111AE8800F55EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA02111AE8800F55EB6 /* Main.storyboard */; };
@@ -43,6 +44,8 @@
 		2559C82B22B8CFEF00235C6C /* TextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 		2559C82E22B8E48E00235C6C /* WJProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WJProgressView.h; sourceTree = "<group>"; };
 		2559C82F22B8E48E00235C6C /* WJProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJProgressView.m; sourceTree = "<group>"; };
+		5D38A5242313AF680093B002 /* AnimationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationLabel.h; sourceTree = "<group>"; };
+		5D38A5252313AF680093B002 /* AnimationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationLabel.m; sourceTree = "<group>"; };
 		7CA4CC972111AE8800F55EB6 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA4CC9A2111AE8800F55EB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,8 +76,8 @@
 		2559C81922B8CFBF00235C6C /* category */ = {
 			isa = PBXGroup;
 			children = (
-				2559C81A22B8CFBF00235C6C /* UIView+layer.m */,
 				2559C81B22B8CFBF00235C6C /* UIView+layer.h */,
+				2559C81A22B8CFBF00235C6C /* UIView+layer.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -91,6 +94,8 @@
 				2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */,
 				2559C81E22B8CFBF00235C6C /* IBDesignableImageView.h */,
 				2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */,
+				5D38A5242313AF680093B002 /* AnimationLabel.h */,
+				5D38A5252313AF680093B002 /* AnimationLabel.m */,
 			);
 			path = widgets;
 			sourceTree = "<group>";
@@ -174,8 +179,6 @@
 				7CA4CC932111AE8800F55EB6 /* Sources */,
 				7CA4CC942111AE8800F55EB6 /* Frameworks */,
 				7CA4CC952111AE8800F55EB6 /* Resources */,
-				32A8B5A0B925C53EC30DAB89 /* [CP] Embed Pods Frameworks */,
-				E025FCB8949FFA91D0B2CDE9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -250,36 +253,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		32A8B5A0B925C53EC30DAB89 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Controls/Pods-Controls-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E025FCB8949FFA91D0B2CDE9 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Controls/Pods-Controls-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -294,6 +267,7 @@
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
 				2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */,
 				2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */,
+				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
 				2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
@@ -443,13 +417,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.Controls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -463,13 +438,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fintech.Controls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

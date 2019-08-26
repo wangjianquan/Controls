@@ -7,12 +7,14 @@
 //
 
 #import "ViewController.h"
+#import "AnimationLabel.h"
 
 
 
 @interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate>
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
 @property (nonatomic, assign) CGFloat keyBoardHeight;
+@property (nonatomic, strong) AnimationLabel * animationLabel;
 @end
 
 @implementation ViewController
@@ -38,6 +40,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _animationLabel = [[AnimationLabel   alloc]initWithFrame:CGRectMake(20, 200, self.view.frame.size.width/2, 40)];
+    _animationLabel.text = @"AnimationLabel测试：当内容文字的宽度大于当前控件的宽度时，内容横向滚动，否则不滚动";
+    _animationLabel.textColor = [UIColor blackColor];
+    _animationLabel.font = [UIFont systemFontOfSize:14];
+    _animationLabel.speed = 0.25;
+    [self.view addSubview:_animationLabel];
+    [_animationLabel startAnimation];
+    
     self.keyboardToolBar.delegate = self;
     self.keyBoardHeight = 0;
     WS(weakSelf);
