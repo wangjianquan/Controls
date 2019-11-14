@@ -15,6 +15,7 @@
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
 @property (nonatomic, assign) CGFloat keyBoardHeight;
 @property (nonatomic, strong) AnimationLabel * animationLabel;
+@property (nonatomic, strong) UILabel *edgeLabel;
 @end
 
 @implementation ViewController
@@ -63,6 +64,15 @@
     };
 
     [self.view addSubview:self.keyboardToolBar];
+    
+    _edgeLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 330, 38, 18)];
+    _edgeLabel.contentInsets = UIEdgeInsetsMake(2, 4, 2, 4);
+    _edgeLabel.text = @"试读";
+    _edgeLabel.font = [UIFont systemFontOfSize:12];
+    _edgeLabel.backgroundColor = [UIColor orangeColor];
+    _edgeLabel.textColor = [UIColor whiteColor];
+    _edgeLabel.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:_edgeLabel];
 }
 #pragma mark - inputView deleaget输入键盘的代理
 //键盘将要出现

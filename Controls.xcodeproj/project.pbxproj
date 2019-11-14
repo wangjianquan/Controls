@@ -16,6 +16,7 @@
 		2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82B22B8CFEF00235C6C /* TextViewController.m */; };
 		2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82F22B8E48E00235C6C /* WJProgressView.m */; };
 		5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38A5252313AF680093B002 /* AnimationLabel.m */; };
+		5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D786CA5237D31FB00373814 /* UILabel+Insets.m */; };
 		7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */; };
 		7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9E2111AE8800F55EB6 /* ViewController.m */; };
 		7CA4CCA22111AE8800F55EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA02111AE8800F55EB6 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		2559C82F22B8E48E00235C6C /* WJProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJProgressView.m; sourceTree = "<group>"; };
 		5D38A5242313AF680093B002 /* AnimationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationLabel.h; sourceTree = "<group>"; };
 		5D38A5252313AF680093B002 /* AnimationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationLabel.m; sourceTree = "<group>"; };
+		5D786CA4237D31FB00373814 /* UILabel+Insets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Insets.h"; sourceTree = "<group>"; };
+		5D786CA5237D31FB00373814 /* UILabel+Insets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Insets.m"; sourceTree = "<group>"; };
 		7CA4CC972111AE8800F55EB6 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA4CC9A2111AE8800F55EB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 			children = (
 				2559C81B22B8CFBF00235C6C /* UIView+layer.h */,
 				2559C81A22B8CFBF00235C6C /* UIView+layer.m */,
+				5D786CA4237D31FB00373814 /* UILabel+Insets.h */,
+				5D786CA5237D31FB00373814 /* UILabel+Insets.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -264,6 +269,7 @@
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
 				2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */,
+				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
 				2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */,
 				2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */,
@@ -414,6 +420,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ48WR2Q9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Controls",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
@@ -435,6 +445,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KJ48WR2Q9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Controls",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
