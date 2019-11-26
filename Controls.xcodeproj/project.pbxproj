@@ -17,6 +17,8 @@
 		2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82F22B8E48E00235C6C /* WJProgressView.m */; };
 		5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38A5252313AF680093B002 /* AnimationLabel.m */; };
 		5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D786CA5237D31FB00373814 /* UILabel+Insets.m */; };
+		7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B12238D9CE7009B33E3 /* RadianLayerView.m */; };
+		7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B13238D9CE7009B33E3 /* PopAlertView.m */; };
 		7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */; };
 		7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9E2111AE8800F55EB6 /* ViewController.m */; };
 		7CA4CCA22111AE8800F55EB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA02111AE8800F55EB6 /* Main.storyboard */; };
@@ -49,6 +51,10 @@
 		5D38A5252313AF680093B002 /* AnimationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationLabel.m; sourceTree = "<group>"; };
 		5D786CA4237D31FB00373814 /* UILabel+Insets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Insets.h"; sourceTree = "<group>"; };
 		5D786CA5237D31FB00373814 /* UILabel+Insets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Insets.m"; sourceTree = "<group>"; };
+		7C001B11238D9CE7009B33E3 /* RadianLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadianLayerView.h; sourceTree = "<group>"; };
+		7C001B12238D9CE7009B33E3 /* RadianLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadianLayerView.m; sourceTree = "<group>"; };
+		7C001B13238D9CE7009B33E3 /* PopAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAlertView.m; sourceTree = "<group>"; };
+		7C001B14238D9CE7009B33E3 /* PopAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAlertView.h; sourceTree = "<group>"; };
 		7CA4CC972111AE8800F55EB6 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA4CC9A2111AE8800F55EB6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 		2559C81C22B8CFBF00235C6C /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
+				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
+				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
+				7C001B12238D9CE7009B33E3 /* RadianLayerView.m */,
 				2559C82D22B8E48E00235C6C /* ProgressViews */,
 				2559C82422B8CFBF00235C6C /* CustomTextView.h */,
 				2559C81F22B8CFBF00235C6C /* CustomTextView.m */,
@@ -268,6 +278,7 @@
 				2559C82822B8CFBF00235C6C /* LayerButton.m in Sources */,
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
+				7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */,
 				2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */,
 				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
@@ -278,6 +289,7 @@
 				2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
 				2559C81022B8879D00235C6C /* TextViewKeyBoardToolBar.m in Sources */,
+				7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
