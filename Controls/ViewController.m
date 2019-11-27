@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "AnimationLabel.h"
-
+#import "SELUpdateAlert.h"
 
 
 @interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate>
@@ -37,6 +37,12 @@
         
     }
     return _keyboardToolBar;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [SELUpdateAlert showUpdateAlertWithVersion:@"1.2" Descriptions:@[@"性能优化"]];
+
 }
 
 - (void)viewDidLoad {

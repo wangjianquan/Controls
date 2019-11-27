@@ -16,6 +16,8 @@
 		2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82B22B8CFEF00235C6C /* TextViewController.m */; };
 		2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C82F22B8E48E00235C6C /* WJProgressView.m */; };
 		5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D38A5252313AF680093B002 /* AnimationLabel.m */; };
+		5D4AA6ED238E6CD100A2081C /* SELUpdateAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4AA6EA238E6CD100A2081C /* SELUpdateAlert.m */; };
+		5D4AA6EE238E6CD100A2081C /* SELUpdateAlertConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D4AA6EB238E6CD100A2081C /* SELUpdateAlertConst.m */; };
 		5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D786CA5237D31FB00373814 /* UILabel+Insets.m */; };
 		7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B12238D9CE7009B33E3 /* RadianLayerView.m */; };
 		7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B13238D9CE7009B33E3 /* PopAlertView.m */; };
@@ -51,6 +53,10 @@
 		2559C82F22B8E48E00235C6C /* WJProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WJProgressView.m; sourceTree = "<group>"; };
 		5D38A5242313AF680093B002 /* AnimationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationLabel.h; sourceTree = "<group>"; };
 		5D38A5252313AF680093B002 /* AnimationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimationLabel.m; sourceTree = "<group>"; };
+		5D4AA6E9238E6CD100A2081C /* SELUpdateAlertConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELUpdateAlertConst.h; sourceTree = "<group>"; };
+		5D4AA6EA238E6CD100A2081C /* SELUpdateAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELUpdateAlert.m; sourceTree = "<group>"; };
+		5D4AA6EB238E6CD100A2081C /* SELUpdateAlertConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SELUpdateAlertConst.m; sourceTree = "<group>"; };
+		5D4AA6EC238E6CD100A2081C /* SELUpdateAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SELUpdateAlert.h; sourceTree = "<group>"; };
 		5D786CA4237D31FB00373814 /* UILabel+Insets.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Insets.h"; sourceTree = "<group>"; };
 		5D786CA5237D31FB00373814 /* UILabel+Insets.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Insets.m"; sourceTree = "<group>"; };
 		7C001B11238D9CE7009B33E3 /* RadianLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadianLayerView.h; sourceTree = "<group>"; };
@@ -104,6 +110,7 @@
 		2559C81C22B8CFBF00235C6C /* widgets */ = {
 			isa = PBXGroup;
 			children = (
+				5D4AA6E8238E6CD100A2081C /* UpdateAlert */,
 				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
 				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
 				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
@@ -138,6 +145,17 @@
 				FCB0218E78FD4C4902BD4F54 /* libPods-Controls.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5D4AA6E8238E6CD100A2081C /* UpdateAlert */ = {
+			isa = PBXGroup;
+			children = (
+				5D4AA6EC238E6CD100A2081C /* SELUpdateAlert.h */,
+				5D4AA6EA238E6CD100A2081C /* SELUpdateAlert.m */,
+				5D4AA6E9238E6CD100A2081C /* SELUpdateAlertConst.h */,
+				5D4AA6EB238E6CD100A2081C /* SELUpdateAlertConst.m */,
+			);
+			path = UpdateAlert;
 			sourceTree = "<group>";
 		};
 		7CA4CC8E2111AE8800F55EB6 = {
@@ -285,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D4AA6ED238E6CD100A2081C /* SELUpdateAlert.m in Sources */,
 				7C001B1C238D9D6E009B33E3 /* UIImage+waterMark.m in Sources */,
 				2559C82822B8CFBF00235C6C /* LayerButton.m in Sources */,
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
@@ -294,6 +313,7 @@
 				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
 				2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */,
+				5D4AA6EE238E6CD100A2081C /* SELUpdateAlertConst.m in Sources */,
 				2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */,
 				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
