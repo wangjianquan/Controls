@@ -29,6 +29,10 @@
 		7CA4CCA42111AE8A00F55EB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA32111AE8A00F55EB6 /* Assets.xcassets */; };
 		7CA4CCA72111AE8A00F55EB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA52111AE8A00F55EB6 /* LaunchScreen.storyboard */; };
 		7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CCA92111AE8A00F55EB6 /* main.m */; };
+		7CA68B4C2396479F00FA688F /* CustomCornerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA68B4B2396479F00FA688F /* CustomCornerView.m */; };
+		7CA68B4F23964C8500FA688F /* OrderProcessAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA68B4E23964C8500FA688F /* OrderProcessAlert.m */; };
+		7CEE5AA92393A559008529D2 /* FloatAudioView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE5AA72393A558008529D2 /* FloatAudioView.m */; };
+		7CEE5AAC2393AB6B008529D2 /* FloatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE5AAB2393AB6B008529D2 /* FloatingView.m */; };
 		F13A07DEE7CED6D25059A382 /* libPods-Controls.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB0218E78FD4C4902BD4F54 /* libPods-Controls.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,14 @@
 		7CA4CCA62111AE8A00F55EB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CA4CCA82111AE8A00F55EB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CA4CCA92111AE8A00F55EB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7CA68B4A2396479F00FA688F /* CustomCornerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCornerView.h; sourceTree = "<group>"; };
+		7CA68B4B2396479F00FA688F /* CustomCornerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCornerView.m; sourceTree = "<group>"; };
+		7CA68B4D23964C8500FA688F /* OrderProcessAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderProcessAlert.h; sourceTree = "<group>"; };
+		7CA68B4E23964C8500FA688F /* OrderProcessAlert.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderProcessAlert.m; sourceTree = "<group>"; };
+		7CEE5AA72393A558008529D2 /* FloatAudioView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatAudioView.m; sourceTree = "<group>"; };
+		7CEE5AA82393A558008529D2 /* FloatAudioView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatAudioView.h; sourceTree = "<group>"; };
+		7CEE5AAA2393AB6B008529D2 /* FloatingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FloatingView.h; sourceTree = "<group>"; };
+		7CEE5AAB2393AB6B008529D2 /* FloatingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FloatingView.m; sourceTree = "<group>"; };
 		A084AAD819D540D9F3A96D84 /* Pods-Controls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Controls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Controls/Pods-Controls.debug.xcconfig"; sourceTree = "<group>"; };
 		E7DE1A1416CD34AB234B3522 /* Pods-Controls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Controls.release.xcconfig"; path = "Pods/Target Support Files/Pods-Controls/Pods-Controls.release.xcconfig"; sourceTree = "<group>"; };
 		FCB0218E78FD4C4902BD4F54 /* libPods-Controls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Controls.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,11 +125,17 @@
 				5D4AA6E8238E6CD100A2081C /* UpdateAlert */,
 				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
 				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
+				7CA68B4D23964C8500FA688F /* OrderProcessAlert.h */,
+				7CA68B4E23964C8500FA688F /* OrderProcessAlert.m */,
 				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
 				7C001B12238D9CE7009B33E3 /* RadianLayerView.m */,
 				2559C82D22B8E48E00235C6C /* ProgressViews */,
 				2559C82422B8CFBF00235C6C /* CustomTextView.h */,
 				2559C81F22B8CFBF00235C6C /* CustomTextView.m */,
+				7CEE5AAA2393AB6B008529D2 /* FloatingView.h */,
+				7CEE5AAB2393AB6B008529D2 /* FloatingView.m */,
+				7CEE5AA82393A558008529D2 /* FloatAudioView.h */,
+				7CEE5AA72393A558008529D2 /* FloatAudioView.m */,
 				2559C82322B8CFBF00235C6C /* LayerButton.h */,
 				2559C82022B8CFBF00235C6C /* LayerButton.m */,
 				2559C82122B8CFBF00235C6C /* UItextViewPlace.h */,
@@ -126,6 +144,8 @@
 				2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */,
 				5D38A5242313AF680093B002 /* AnimationLabel.h */,
 				5D38A5252313AF680093B002 /* AnimationLabel.m */,
+				7CA68B4A2396479F00FA688F /* CustomCornerView.h */,
+				7CA68B4B2396479F00FA688F /* CustomCornerView.m */,
 			);
 			path = widgets;
 			sourceTree = "<group>";
@@ -309,6 +329,7 @@
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
 				7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */,
+				7CEE5AA92393A559008529D2 /* FloatAudioView.m in Sources */,
 				2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */,
 				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
@@ -318,9 +339,12 @@
 				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
 				2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */,
+				7CEE5AAC2393AB6B008529D2 /* FloatingView.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
+				7CA68B4F23964C8500FA688F /* OrderProcessAlert.m in Sources */,
 				7C001B19238D9D60009B33E3 /* PreHelper.m in Sources */,
 				2559C81022B8879D00235C6C /* TextViewKeyBoardToolBar.m in Sources */,
+				7CA68B4C2396479F00FA688F /* CustomCornerView.m in Sources */,
 				7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

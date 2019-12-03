@@ -7,7 +7,7 @@
 //
 
 #import "TextViewController.h"
-
+#import "OrderProcessAlert.h"
 @interface TextViewController ()<KeyToolBarDelegate,UITextViewDelegate>
 
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
@@ -23,20 +23,16 @@
         _textView.placeholderColor = [UIColor orangeColor];
         _textView.placeholder = @"textView placeholder ...";
         _textView.maxNumberOfLines = 6;
-        
+        __weak typeof(self) weakSelf = self;
         _textView.yz_textHeightChangeBlock = ^(NSString * _Nonnull text, CGFloat textHeight) {
-            self.textView.frame = CGRectMake(30, 100, SCREEN_WIDTH-60, textHeight);
+            weakSelf.textView.frame = CGRectMake(30, 100, SCREEN_WIDTH-60, textHeight);
             NSLog(@"text: %@ , textHeight : %f",text, textHeight);
         };
     }
     return _textView;
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    [self.view addSubview:self.textView];
-//    // Do any additional setup after loading the view.
-//}
+
 - (TextViewKeyBoardToolBar *)keyboardToolBar{
     if (!_keyboardToolBar) {
         _keyboardToolBar = [[TextViewKeyBoardToolBar alloc]initWithFrame:CGRectMake(0,SCREEN_HEIGHT-keyboardToolBar_height - SafeAreaBottomHeight ,SCREEN_WIDTH, keyboardToolBar_height)];
@@ -65,16 +61,6 @@
     //        NSLog(@"%@ , %f",text, textHeight);
     //    };
     [self.view addSubview:self.keyboardToolBar];
-    
-    //    [self.keyboardToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.right.and.left.equalTo(self.view);
-    //        if (@available(iOS 11.0, *)) {
-    //            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-    //        } else {
-    //            make.bottom.equalTo(self.view);
-    //        }
-    //        make.height.mas_equalTo(keyboardToolBar_height);
-    //    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 #pragma mark - inputView deleaget输入键盘的代理
@@ -84,32 +70,18 @@
     [UIView animateWithDuration:0.25 animations:^{
         [UIView setAnimationBeginsFromCurrentState:YES];
         [UIView setAnimationCurve:7];
-        //        [self.keyboardToolBar mas_updateConstraints:^(MASConstraintMaker *make) {
-        //            make.right.and.left.equalTo(self.view);
-        //            make.bottom.equalTo(self.view).offset(-height);
-        //            make.height.mas_equalTo(keyboardToolBar_height);
-        //        }];
-        //        CGRect
         CGRect tempRect = self.keyboardToolBar.frame;
         tempRect.origin.y = SCREEN_HEIGHT - (height + keyboardToolBar_height);
         self.keyboardToolBar.frame = tempRect;
         
-        //        self.keyboardToolBar.frame = CGRectMake(0,SCREEN_HEIGHT - keyboardToolBar_height - height ,SCREEN_WIDTH, keyboardToolBar_height);
+        //self.keyboardToolBar.frame = CGRectMake(0,SCREEN_HEIGHT - keyboardToolBar_height - height ,SCREEN_WIDTH, keyboardToolBar_height);
     }];
     [self.view layoutIfNeeded];
 }
 
 //隐藏键盘
 -(void)hiddenKeyBoard{
-    //    [self.keyboardToolBar mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.right.and.left.equalTo(self.view);
-    //        if (@available(iOS 11.0, *)) {
-    //            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-    //        } else {
-    //            make.bottom.equalTo(self.view);
-    //        }
-    //        make.height.mas_equalTo(keyboardToolBar_height);
-    //    }];
+   
     CGRect tempRect = self.keyboardToolBar.frame;
     tempRect.origin.y = SCREEN_HEIGHT - keyboardToolBar_height - SafeAreaBottomHeight;
     self.keyboardToolBar.frame = tempRect;

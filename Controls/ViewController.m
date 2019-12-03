@@ -9,13 +9,17 @@
 #import "ViewController.h"
 #import "AnimationLabel.h"
 #import "SELUpdateAlert.h"
+#import "FloatAudioView.h"
+#import "FloatingView.h"
+#import "CustomCornerView.h"
+#import "OrderProcessAlert.h"
 
-
-@interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate>
+@interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate,OrderProcessAlertDelegate>
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
 @property (nonatomic, assign) CGFloat keyBoardHeight;
 @property (nonatomic, strong) AnimationLabel * animationLabel;
 @property (nonatomic, strong) UILabel *edgeLabel;
+
 @end
 
 @implementation ViewController
@@ -23,7 +27,6 @@
 - (TextViewKeyBoardToolBar *)keyboardToolBar{
     if (!_keyboardToolBar) {
         _keyboardToolBar = [[TextViewKeyBoardToolBar alloc]initWithFrame:CGRectMake(0,SCREEN_HEIGHT-keyboardToolBar_height - SafeAreaBottomHeight ,SCREEN_WIDTH, keyboardToolBar_height)];
-
         _keyboardToolBar.delegate = self;
         WS(weakSelf);
         _keyboardToolBar.sendTextBlock = ^(NSString *string) {
@@ -33,20 +36,38 @@
             weakSelf.keyboardToolBar.frame = tempRect;
             NSLog(@"发送: %@",string);
         };
-        
-        
     }
     return _keyboardToolBar;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [SELUpdateAlert showUpdateAlertWithVersion:@"1.2" Descriptions:@[@"性能优化"]];
+    [[FloatingView sharedInstance]show];
+    [[FloatAudioView sharedInstance]show];
 
+//    [SELUpdateAlert showUpdateAlertWithVersion:@"1.2" Descriptions:@[@"性能优化"]];
+    
+    [OrderProcessAlert showOrderProcessAlert:@"该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时" buttonTitles:@[@"我知道了",@"确认到店"] otherSettings:^(OrderProcessAlert * _Nonnull orderProcess) {
+        orderProcess.cornerRadius = 15;
+        orderProcess.delegate = self;
+    }];
+}
+
+- (void)orderProcessAlertSureBtnAction:(NSString *)btnTitle{
+    NSLog(@"orderProcessAlertSureBtnAction : %@",btnTitle);
+}
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [CustomCornerView showAtPoint:CGPointMake(30, 200) titles:@"陕西省西安市雁塔区二环南路西段281号附近" menuWidth:200 otherSettings:^(CustomCornerView * _Nonnull corner) {
+        corner.cornerRadius = 10;
+        corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
+    }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     _animationLabel = [[AnimationLabel   alloc]initWithFrame:CGRectMake(20, 200, self.view.frame.size.width/2, 40)];
     _animationLabel.text = @"AnimationLabel测试：当内容文字的宽度大于当前控件的宽度时，内容横向滚动，否则不滚动";
     _animationLabel.textColor = [UIColor blackColor];

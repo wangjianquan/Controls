@@ -162,11 +162,11 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
     cancelButton.center = CGPointMake(CGRectGetMaxX(updateView.frame), CGRectGetMinY(updateView.frame));
     cancelButton.bounds = CGRectMake(0, 0, Ratio(36), Ratio(36));
-    [cancelButton setTitle:@"暂不更新" forState:UIControlStateNormal];
-//    [cancelButton setImage:[[UIImage imageNamed:@"xuezhiqian"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+//    [cancelButton setTitle:@"关闭" forState:UIControlStateNormal];
+    [cancelButton setImage:[[UIImage imageNamed:@"关闭"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:cancelButton];
-    cancelButton.hidden = YES;
+//    cancelButton.hidden = YES;
     
     //显示更新
     [self showWithAlert:bgView];
