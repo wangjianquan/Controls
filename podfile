@@ -8,4 +8,6 @@ target 'Controls' do
   # Pods for Controls
     pod 'Masonry'
     pod 'MBProgressHUD'
+    pod "YBPopupMenu"
+    
 end

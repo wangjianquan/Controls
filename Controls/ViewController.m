@@ -59,7 +59,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [CustomCornerView showAtPoint:CGPointMake(30, 200) titles:@"陕西省西安市雁塔区二环南路西段281号附近" menuWidth:200 otherSettings:^(CustomCornerView * _Nonnull corner) {
+    [CustomCornerView showAtPoint:CGPointMake(30, 200) titles:@"陕西省西安市高新技术产业开发区天谷七路与云水一路交汇处西北侧雁塔区大雁塔街道广场东路3号" menuWidth:200 otherSettings:^(CustomCornerView * _Nonnull corner) {
         corner.cornerRadius = 10;
         corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
     }];
