@@ -13,6 +13,7 @@
 #import "FloatingView.h"
 #import "CustomCornerView.h"
 #import "OrderProcessAlert.h"
+#import "BannerVC.h"
 
 @interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate,OrderProcessAlertDelegate>
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
@@ -23,6 +24,7 @@
 @end
 
 @implementation ViewController
+
 
 - (TextViewKeyBoardToolBar *)keyboardToolBar{
     if (!_keyboardToolBar) {
@@ -63,8 +65,13 @@
         corner.cornerRadius = 10;
         corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
     }];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"banner" style:(UIBarButtonItemStylePlain) target:self action:@selector(bannerAction)];
 }
-
+- (void)bannerAction{
+    BannerVC * vc = [[BannerVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 

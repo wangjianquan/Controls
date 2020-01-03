@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2559C81022B8879D00235C6C /* TextViewKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C80E22B8879C00235C6C /* TextViewKeyBoardToolBar.m */; };
+		121B255B23BF53DB000EB096 /* ALGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B255A23BF53DB000EB096 /* ALGCDTimer.m */; };
+		121B255E23BF5402000EB096 /* NSObject+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B255C23BF5402000EB096 /* NSObject+property.m */; };
+		121B256123BF5427000EB096 /* TextViewKeyBoardToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B255F23BF5427000EB096 /* TextViewKeyBoardToolBar.m */; };
+		121B256D23BF5514000EB096 /* ALBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B256A23BF5514000EB096 /* ALBannerView.m */; };
+		121B256E23BF5514000EB096 /* ALBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B256B23BF5514000EB096 /* ALBannerModel.m */; };
+		121B257423BF57BB000EB096 /* h3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B256F23BF57BA000EB096 /* h3.jpg */; };
+		121B257523BF57BB000EB096 /* h1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257023BF57BA000EB096 /* h1.jpg */; };
+		121B257623BF57BB000EB096 /* h2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257123BF57BA000EB096 /* h2.jpg */; };
+		121B257723BF57BB000EB096 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 121B257223BF57BA000EB096 /* placeholder@2x.png */; };
+		121B257823BF57BB000EB096 /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257323BF57BB000EB096 /* h4.jpg */; };
+		121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B257A23BF5AF4000EB096 /* BannerVC.m */; };
 		2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81A22B8CFBF00235C6C /* UIView+layer.m */; };
 		2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */; };
 		2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81F22B8CFBF00235C6C /* CustomTextView.m */; };
@@ -37,8 +47,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2559C80E22B8879C00235C6C /* TextViewKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewKeyBoardToolBar.m; sourceTree = "<group>"; };
-		2559C80F22B8879C00235C6C /* TextViewKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewKeyBoardToolBar.h; sourceTree = "<group>"; };
+		121B255923BF53DB000EB096 /* ALGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALGCDTimer.h; sourceTree = "<group>"; };
+		121B255A23BF53DB000EB096 /* ALGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALGCDTimer.m; sourceTree = "<group>"; };
+		121B255C23BF5402000EB096 /* NSObject+property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+property.m"; sourceTree = "<group>"; };
+		121B255D23BF5402000EB096 /* NSObject+property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+property.h"; sourceTree = "<group>"; };
+		121B255F23BF5427000EB096 /* TextViewKeyBoardToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewKeyBoardToolBar.m; sourceTree = "<group>"; };
+		121B256023BF5427000EB096 /* TextViewKeyBoardToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewKeyBoardToolBar.h; sourceTree = "<group>"; };
+		121B256923BF5514000EB096 /* ALBannerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALBannerModel.h; sourceTree = "<group>"; };
+		121B256A23BF5514000EB096 /* ALBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALBannerView.m; sourceTree = "<group>"; };
+		121B256B23BF5514000EB096 /* ALBannerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALBannerModel.m; sourceTree = "<group>"; };
+		121B256C23BF5514000EB096 /* ALBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALBannerView.h; sourceTree = "<group>"; };
+		121B256F23BF57BA000EB096 /* h3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h3.jpg; sourceTree = "<group>"; };
+		121B257023BF57BA000EB096 /* h1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h1.jpg; sourceTree = "<group>"; };
+		121B257123BF57BA000EB096 /* h2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h2.jpg; sourceTree = "<group>"; };
+		121B257223BF57BA000EB096 /* placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder@2x.png"; sourceTree = "<group>"; };
+		121B257323BF57BB000EB096 /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
+		121B257923BF5AF4000EB096 /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
+		121B257A23BF5AF4000EB096 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
 		2559C81122B8893000235C6C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2559C81522B88C5E00235C6C /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		2559C81A22B8CFBF00235C6C /* UIView+layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+layer.m"; sourceTree = "<group>"; };
@@ -106,9 +131,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121B255823BF53DB000EB096 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				121B255923BF53DB000EB096 /* ALGCDTimer.h */,
+				121B255A23BF53DB000EB096 /* ALGCDTimer.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		121B256823BF5514000EB096 /* Banner */ = {
+			isa = PBXGroup;
+			children = (
+				121B257023BF57BA000EB096 /* h1.jpg */,
+				121B257123BF57BA000EB096 /* h2.jpg */,
+				121B256F23BF57BA000EB096 /* h3.jpg */,
+				121B257323BF57BB000EB096 /* h4.jpg */,
+				121B257223BF57BA000EB096 /* placeholder@2x.png */,
+				121B256923BF5514000EB096 /* ALBannerModel.h */,
+				121B256B23BF5514000EB096 /* ALBannerModel.m */,
+				121B256C23BF5514000EB096 /* ALBannerView.h */,
+				121B256A23BF5514000EB096 /* ALBannerView.m */,
+			);
+			path = Banner;
+			sourceTree = "<group>";
+		};
 		2559C81922B8CFBF00235C6C /* category */ = {
 			isa = PBXGroup;
 			children = (
+				121B255D23BF5402000EB096 /* NSObject+property.h */,
+				121B255C23BF5402000EB096 /* NSObject+property.m */,
 				7C001B1A238D9D6E009B33E3 /* UIImage+waterMark.h */,
 				7C001B1B238D9D6E009B33E3 /* UIImage+waterMark.m */,
 				2559C81B22B8CFBF00235C6C /* UIView+layer.h */,
@@ -122,30 +174,32 @@
 		2559C81C22B8CFBF00235C6C /* widgets */ = {
 			isa = PBXGroup;
 			children = (
-				5D4AA6E8238E6CD100A2081C /* UpdateAlert */,
-				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
-				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
-				7CA68B4D23964C8500FA688F /* OrderProcessAlert.h */,
-				7CA68B4E23964C8500FA688F /* OrderProcessAlert.m */,
-				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
-				7C001B12238D9CE7009B33E3 /* RadianLayerView.m */,
-				2559C82D22B8E48E00235C6C /* ProgressViews */,
-				2559C82422B8CFBF00235C6C /* CustomTextView.h */,
-				2559C81F22B8CFBF00235C6C /* CustomTextView.m */,
-				7CEE5AAA2393AB6B008529D2 /* FloatingView.h */,
-				7CEE5AAB2393AB6B008529D2 /* FloatingView.m */,
-				7CEE5AA82393A558008529D2 /* FloatAudioView.h */,
-				7CEE5AA72393A558008529D2 /* FloatAudioView.m */,
-				2559C82322B8CFBF00235C6C /* LayerButton.h */,
-				2559C82022B8CFBF00235C6C /* LayerButton.m */,
-				2559C82122B8CFBF00235C6C /* UItextViewPlace.h */,
-				2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */,
-				2559C81E22B8CFBF00235C6C /* IBDesignableImageView.h */,
-				2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */,
 				5D38A5242313AF680093B002 /* AnimationLabel.h */,
 				5D38A5252313AF680093B002 /* AnimationLabel.m */,
 				7CA68B4A2396479F00FA688F /* CustomCornerView.h */,
 				7CA68B4B2396479F00FA688F /* CustomCornerView.m */,
+				2559C82422B8CFBF00235C6C /* CustomTextView.h */,
+				2559C81F22B8CFBF00235C6C /* CustomTextView.m */,
+				7CEE5AA82393A558008529D2 /* FloatAudioView.h */,
+				7CEE5AA72393A558008529D2 /* FloatAudioView.m */,
+				7CEE5AAA2393AB6B008529D2 /* FloatingView.h */,
+				7CEE5AAB2393AB6B008529D2 /* FloatingView.m */,
+				2559C81E22B8CFBF00235C6C /* IBDesignableImageView.h */,
+				2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */,
+				2559C82322B8CFBF00235C6C /* LayerButton.h */,
+				2559C82022B8CFBF00235C6C /* LayerButton.m */,
+				7CA68B4D23964C8500FA688F /* OrderProcessAlert.h */,
+				7CA68B4E23964C8500FA688F /* OrderProcessAlert.m */,
+				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
+				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
+				2559C82D22B8E48E00235C6C /* ProgressViews */,
+				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
+				7C001B12238D9CE7009B33E3 /* RadianLayerView.m */,
+				121B256023BF5427000EB096 /* TextViewKeyBoardToolBar.h */,
+				121B255F23BF5427000EB096 /* TextViewKeyBoardToolBar.m */,
+				2559C82122B8CFBF00235C6C /* UItextViewPlace.h */,
+				2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */,
+				5D4AA6E8238E6CD100A2081C /* UpdateAlert */,
 			);
 			path = widgets;
 			sourceTree = "<group>";
@@ -199,6 +253,7 @@
 		7CA4CC992111AE8800F55EB6 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				121B256823BF5514000EB096 /* Banner */,
 				7CA4CC9A2111AE8800F55EB6 /* AppDelegate.h */,
 				7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */,
 				7C001B18238D9D60009B33E3 /* PreHelper.h */,
@@ -207,10 +262,11 @@
 				2559C81C22B8CFBF00235C6C /* widgets */,
 				7CA4CC9D2111AE8800F55EB6 /* ViewController.h */,
 				7CA4CC9E2111AE8800F55EB6 /* ViewController.m */,
+				121B257923BF5AF4000EB096 /* BannerVC.h */,
+				121B257A23BF5AF4000EB096 /* BannerVC.m */,
 				2559C82A22B8CFEF00235C6C /* TextViewController.h */,
 				2559C82B22B8CFEF00235C6C /* TextViewController.m */,
-				2559C80F22B8879C00235C6C /* TextViewKeyBoardToolBar.h */,
-				2559C80E22B8879C00235C6C /* TextViewKeyBoardToolBar.m */,
+				121B255823BF53DB000EB096 /* Tools */,
 				2559C81122B8893000235C6C /* PrefixHeader.pch */,
 				2559C81522B88C5E00235C6C /* Const.h */,
 				7CA4CCA02111AE8800F55EB6 /* Main.storyboard */,
@@ -289,7 +345,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				121B257523BF57BB000EB096 /* h1.jpg in Resources */,
+				121B257823BF57BB000EB096 /* h4.jpg in Resources */,
+				121B257723BF57BB000EB096 /* placeholder@2x.png in Resources */,
+				121B257423BF57BB000EB096 /* h3.jpg in Resources */,
 				7CA4CCA72111AE8A00F55EB6 /* LaunchScreen.storyboard in Resources */,
+				121B257623BF57BB000EB096 /* h2.jpg in Resources */,
 				7CA4CCA42111AE8A00F55EB6 /* Assets.xcassets in Resources */,
 				7CA4CCA22111AE8800F55EB6 /* Main.storyboard in Resources */,
 			);
@@ -326,24 +387,29 @@
 				5D4AA6ED238E6CD100A2081C /* SELUpdateAlert.m in Sources */,
 				7C001B1C238D9D6E009B33E3 /* UIImage+waterMark.m in Sources */,
 				2559C82822B8CFBF00235C6C /* LayerButton.m in Sources */,
+				121B256123BF5427000EB096 /* TextViewKeyBoardToolBar.m in Sources */,
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
 				7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */,
+				121B255E23BF5402000EB096 /* NSObject+property.m in Sources */,
 				7CEE5AA92393A559008529D2 /* FloatAudioView.m in Sources */,
+				121B256E23BF5514000EB096 /* ALBannerModel.m in Sources */,
 				2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */,
 				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */,
 				2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */,
 				5D4AA6EE238E6CD100A2081C /* SELUpdateAlertConst.m in Sources */,
 				2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */,
+				121B256D23BF5514000EB096 /* ALBannerView.m in Sources */,
 				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
+				121B255B23BF53DB000EB096 /* ALGCDTimer.m in Sources */,
 				2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */,
 				7CEE5AAC2393AB6B008529D2 /* FloatingView.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
 				7CA68B4F23964C8500FA688F /* OrderProcessAlert.m in Sources */,
+				121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */,
 				7C001B19238D9D60009B33E3 /* PreHelper.m in Sources */,
-				2559C81022B8879D00235C6C /* TextViewKeyBoardToolBar.m in Sources */,
 				7CA68B4C2396479F00FA688F /* CustomCornerView.m in Sources */,
 				7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */,
 			);

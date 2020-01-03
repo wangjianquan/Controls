@@ -52,7 +52,7 @@
     CGFloat descHeight = [self _sizeofString:self.desc font:[UIFont systemFontOfSize:15] maxSize:CGSizeMake(self.frame.size.width - Ratio(80) - Ratio(56), CGFLOAT_MAX)].height;
     
     //bgView实际高度
-    CGFloat realHeight = descHeight + Ratio(228);
+    CGFloat realHeight = descHeight + Ratio(208);
     
     //bgView最大高度
     CGFloat maxHeight = DEFAULT_MAX_HEIGHT;
@@ -62,7 +62,7 @@
     //重置bgView最大高度 设置更新内容可否滑动显示
     if (realHeight > DEFAULT_MAX_HEIGHT) {
         scrollEnabled = YES;
-        descHeight = DEFAULT_MAX_HEIGHT - Ratio(228);
+        descHeight = DEFAULT_MAX_HEIGHT - Ratio(208);
     }else
     {
         maxHeight = realHeight;
@@ -84,14 +84,14 @@
     self.contentView = contentView;
     
     
-    //20+80+10+28+10+descHeight+20+40+20 = 314+descHeight 内部元素高度计算bgView高度
-    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake((contentView.frame.size.width - Ratio(80))/2, Ratio(20), Ratio(80), Ratio(80))];
-    icon.image = [UIImage imageNamed:@"VersionUpdate_Icon"];
+    //20+60+20+28+10+descHeight+20+40+20 = 314+descHeight 内部元素高度计算bgView高度
+    UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake((contentView.frame.size.width - Ratio(60))/2, Ratio(40), Ratio(60), Ratio(60))];
+    icon.image = [UIImage imageNamed:@"icon_warn_w"];
     [contentView addSubview:icon];
     
     
     //更新内容
-    UITextView *descTextView = [[UITextView alloc]initWithFrame:CGRectMake(Ratio(28), Ratio(10) + CGRectGetMaxY(icon.frame), contentView.frame.size.width - Ratio(56), descHeight)];
+    UITextView *descTextView = [[UITextView alloc]initWithFrame:CGRectMake(Ratio(28), Ratio(20) + CGRectGetMaxY(icon.frame), contentView.frame.size.width - Ratio(56), descHeight)];
     descTextView.font = [UIFont systemFontOfSize:15];
     descTextView.textContainer.lineFragmentPadding = 0;
     descTextView.textContainerInset = UIEdgeInsetsMake(0, 0, 0, 0);
@@ -167,13 +167,7 @@
 }
 
 - (void)btnAction:(UIButton * )sender{
-    if ([sender.titleLabel.text isEqualToString:@"我知道了"]) {
-        
-    } else if([sender.titleLabel.text isEqualToString:@"确认到店"]){
-        
-    } else if([sender.titleLabel.text isEqualToString:@"确认到达"]){
-        
-    }
+   
     if ([self.delegate respondsToSelector:@selector(orderProcessAlertSureBtnAction:)]) {
         [self.delegate orderProcessAlertSureBtnAction:sender.titleLabel.text];
     }
