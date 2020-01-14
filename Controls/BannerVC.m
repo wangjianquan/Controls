@@ -15,13 +15,19 @@
 @end
 
 @implementation BannerVC
-
+//-(ALBannerView *)bannerView{
+//    if (!_bannerView) {
+//        _bannerView = [ALBannerView alloc]initWithFrame:<#(CGRect)#>
+//    }
+//    return _bannerView;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-   CGFloat imageWidth = SCREEN_WIDTH - 30;
-    CGFloat imageHeight = imageWidth*312*1.0/686;
-    _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, kNavigationBarHeight + kStatusBarHeight , SCREEN_WIDTH, imageHeight + 5 + 30)];
+//        CGFloat imageHeight = imageWidth*312*1.0/686;
+
+    
+    _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, 90 , SCREEN_WIDTH, SCREEN_WIDTH/2 )];
     WS(weakSelf);
     _bannerView.bannerSuccessBlock = ^{
     };

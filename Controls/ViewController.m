@@ -45,15 +45,22 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [[FloatingView sharedInstance]show];
-    [[FloatAudioView sharedInstance]show];
-
-//    [SELUpdateAlert showUpdateAlertWithVersion:@"1.2" Descriptions:@[@"性能优化"]];
-    
-    [OrderProcessAlert showOrderProcessAlert:@"该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时" buttonTitles:@[@"我知道了",@"确认到店"] otherSettings:^(OrderProcessAlert * _Nonnull orderProcess) {
-        orderProcess.cornerRadius = 15;
-        orderProcess.delegate = self;
-    }];
+  
+//    [[FloatingView sharedInstance]show];
+//    [[FloatAudioView sharedInstance]show];
+//
+////    [SELUpdateAlert showUpdateAlertWithVersion:@"1.2" Descriptions:@[@"性能优化"]];
+//
+//    [OrderProcessAlert showOrderProcessAlert:@"该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时该订单用时62分钟，超时2分钟，此订单将扣除￥2元，具体收益以签收时为准，以后接送单要准时" buttonTitles:@[@"我知道了",@"确认到店"] otherSettings:^(OrderProcessAlert * _Nonnull orderProcess) {
+//        orderProcess.cornerRadius = 15;
+//        orderProcess.delegate = self;
+//    }];
+}
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+   
+//    [[FloatingView sharedInstance]remove];
+//    [[FloatAudioView sharedInstance]remove];
 }
 
 - (void)orderProcessAlertSureBtnAction:(NSString *)btnTitle{
@@ -67,6 +74,8 @@
     }];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"banner" style:(UIBarButtonItemStylePlain) target:self action:@selector(bannerAction)];
+    
+  
 }
 - (void)bannerAction{
     BannerVC * vc = [[BannerVC alloc]init];
@@ -99,7 +108,7 @@
 
     [self.view addSubview:self.keyboardToolBar];
     
-    _edgeLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 330, 38, 18)];
+    _edgeLabel = [[UILabel alloc]initWithFrame:CGRectMake(50, 330, 155, 155)];
     _edgeLabel.contentInsets = UIEdgeInsetsMake(2, 4, 2, 4);
     _edgeLabel.text = @"试读";
     _edgeLabel.font = [UIFont systemFontOfSize:12];

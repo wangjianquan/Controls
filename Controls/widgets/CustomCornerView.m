@@ -106,21 +106,36 @@
 - (void)show{
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
-    [UIView animateWithDuration: 0.25 animations:^{
+//    [UIView animateWithDuration: 0.25 animations:^{
+//        self.layer.affineTransform = CGAffineTransformMakeScale(1.0, 1.0);
+//        self.alpha = 1;
+//    } completion:^(BOOL finished) {
+//
+//    }];
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
         self.layer.affineTransform = CGAffineTransformMakeScale(1.0, 1.0);
         self.alpha = 1;
     } completion:^(BOOL finished) {
-       
+
     }];
 }
 - (void)dismiss{
-    [UIView animateWithDuration: 0.25 animations:^{
-        self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
-        self.alpha = 0;
-    } completion:^(BOOL finished) {
-        self.delegate = nil;
-        [self removeFromSuperview];
-    }];
+//    [UIView animateWithDuration: 0.25 animations:^{
+//        self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+//        self.alpha = 0;
+//    } completion:^(BOOL finished) {
+//        self.delegate = nil;
+//        [self removeFromSuperview];
+//    }];
+    
+    [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:(UIViewAnimationOptionCurveEaseInOut) animations:^{
+            self.layer.affineTransform = CGAffineTransformMakeScale(0.1, 0.1);
+            self.alpha = 0;
+        } completion:^(BOOL finished) {
+            self.delegate = nil;
+            [self removeFromSuperview];
+        }];
 }
 
 - (void)tapGesture:(UITapGestureRecognizer *)gesture{
