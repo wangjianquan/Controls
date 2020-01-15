@@ -14,6 +14,7 @@
 #import "CustomCornerView.h"
 #import "OrderProcessAlert.h"
 #import "BannerVC.h"
+#import "TestVC.h"
 
 @interface ViewController ()<KeyToolBarDelegate,UITextViewDelegate,OrderProcessAlertDelegate>
 @property (nonatomic, strong) TextViewKeyBoardToolBar *keyboardToolBar;
@@ -68,12 +69,7 @@
 }
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [CustomCornerView showAtPoint:CGPointMake(30, 200) titles:@"陕西省西安市高新技术产业开发区天谷七路与云水一路交汇处西北侧雁塔区大雁塔街道广场东路3号" menuWidth:200 otherSettings:^(CustomCornerView * _Nonnull corner) {
-        corner.cornerRadius = 10;
-        corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
-    }];
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"banner" style:(UIBarButtonItemStylePlain) target:self action:@selector(bannerAction)];
+   
     
   
 }
@@ -116,6 +112,13 @@
     _edgeLabel.textColor = [UIColor whiteColor];
     _edgeLabel.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:_edgeLabel];
+    
+    [CustomCornerView showAtPoint:CGPointMake(30, 200) titles:@"陕西省西安市高新技术产业开发区天谷七路与云水一路交汇处西北侧雁塔区大雁塔街道广场东路3号" menuWidth:200 otherSettings:^(CustomCornerView * _Nonnull corner) {
+           corner.cornerRadius = 10;
+           corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
+       }];
+       
+       self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"banner" style:(UIBarButtonItemStylePlain) target:self action:@selector(bannerAction)];
 }
 #pragma mark - inputView deleaget输入键盘的代理
 //键盘将要出现

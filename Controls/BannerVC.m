@@ -8,35 +8,62 @@
 
 #import "BannerVC.h"
 #import "ALBannerView.h"
+#import "MaskView.h"
+@interface BannerVC ()<UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate>
 
-@interface BannerVC ()
 @property (nonatomic, strong) ALBannerView *bannerView;
-
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) MaskView * maskView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 @end
 
 @implementation BannerVC
-//-(ALBannerView *)bannerView{
-//    if (!_bannerView) {
-//        _bannerView = [ALBannerView alloc]initWithFrame:<#(CGRect)#>
-//    }
-//    return _bannerView;
-//}
+
+-(ALBannerView *)bannerView{
+    if (!_bannerView) {
+        _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, 0 , SCREEN_WIDTH, SCREEN_WIDTH/2 )];
+        __weak typeof(self) weakSelf = self;
+        _bannerView.bannerSelectBlock = ^(NSInteger index) {
+            weakSelf.navigationItem.title = [NSString stringWithFormat:@"%ld",index];
+        };
+    }
+    return _bannerView;
+}
+- (UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [UIView new];
+        
+    }
+    return _tableView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
 //        CGFloat imageHeight = imageWidth*312*1.0/686;
 
     
-    _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, 90 , SCREEN_WIDTH, SCREEN_WIDTH/2 )];
-    WS(weakSelf);
-    _bannerView.bannerSuccessBlock = ^{
-    };
-    _bannerView.bannerFailedBlock = ^{
-    };
+    
+    [self.view addSubview:self.bannerView];
+    self.tableView.tableHeaderView = self.bannerView;
     self.bannerView.loadBanner = YES;
-    [self.view addSubview:_bannerView];
-
+    [self.view addSubview:self.tableView];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
+    
     // Do any additional setup after loading the view.
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 20;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell  = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"test - %ld ",indexPath.row];
+    return cell;
 }
 
 /*

@@ -14,9 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL loadBanner;
 
-@property (nonatomic, copy) void(^bannerSuccessBlock)(void);
-@property (nonatomic, copy) void(^bannerFailedBlock)(void);
-
+@property (nonatomic, copy) void (^bannerSelectBlock)(NSInteger index);
 - (void)freeSpeedTimer;
 
 @end

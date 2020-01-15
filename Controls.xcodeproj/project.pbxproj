@@ -18,6 +18,9 @@
 		121B257723BF57BB000EB096 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 121B257223BF57BA000EB096 /* placeholder@2x.png */; };
 		121B257823BF57BB000EB096 /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257323BF57BB000EB096 /* h4.jpg */; };
 		121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B257A23BF5AF4000EB096 /* BannerVC.m */; };
+		12E2973823CEC47800B40941 /* PreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973623CEC47800B40941 /* PreHelper.m */; };
+		12E2973B23CEFBB700B40941 /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973A23CEFBB700B40941 /* MaskView.m */; };
+		12E2973E23CF08FA00B40941 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973D23CF08FA00B40941 /* TestVC.m */; };
 		2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81A22B8CFBF00235C6C /* UIView+layer.m */; };
 		2559C82622B8CFBF00235C6C /* UItextViewPlace.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */; };
 		2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2559C81F22B8CFBF00235C6C /* CustomTextView.m */; };
@@ -31,7 +34,6 @@
 		5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D786CA5237D31FB00373814 /* UILabel+Insets.m */; };
 		7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B12238D9CE7009B33E3 /* RadianLayerView.m */; };
 		7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B13238D9CE7009B33E3 /* PopAlertView.m */; };
-		7C001B19238D9D60009B33E3 /* PreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B17238D9D60009B33E3 /* PreHelper.m */; };
 		7C001B1C238D9D6E009B33E3 /* UIImage+waterMark.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B1B238D9D6E009B33E3 /* UIImage+waterMark.m */; };
 		7CA4CC9C2111AE8800F55EB6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */; };
 		7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CA4CC9E2111AE8800F55EB6 /* ViewController.m */; };
@@ -64,6 +66,12 @@
 		121B257323BF57BB000EB096 /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		121B257923BF5AF4000EB096 /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
 		121B257A23BF5AF4000EB096 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
+		12E2973623CEC47800B40941 /* PreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreHelper.m; sourceTree = "<group>"; };
+		12E2973723CEC47800B40941 /* PreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreHelper.h; sourceTree = "<group>"; };
+		12E2973923CEFBB700B40941 /* MaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
+		12E2973A23CEFBB700B40941 /* MaskView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaskView.m; sourceTree = "<group>"; };
+		12E2973C23CF08FA00B40941 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		12E2973D23CF08FA00B40941 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
 		2559C81122B8893000235C6C /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		2559C81522B88C5E00235C6C /* Const.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		2559C81A22B8CFBF00235C6C /* UIView+layer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+layer.m"; sourceTree = "<group>"; };
@@ -92,8 +100,6 @@
 		7C001B12238D9CE7009B33E3 /* RadianLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadianLayerView.m; sourceTree = "<group>"; };
 		7C001B13238D9CE7009B33E3 /* PopAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAlertView.m; sourceTree = "<group>"; };
 		7C001B14238D9CE7009B33E3 /* PopAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopAlertView.h; sourceTree = "<group>"; };
-		7C001B17238D9D60009B33E3 /* PreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreHelper.m; sourceTree = "<group>"; };
-		7C001B18238D9D60009B33E3 /* PreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreHelper.h; sourceTree = "<group>"; };
 		7C001B1A238D9D6E009B33E3 /* UIImage+waterMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+waterMark.h"; sourceTree = "<group>"; };
 		7C001B1B238D9D6E009B33E3 /* UIImage+waterMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+waterMark.m"; sourceTree = "<group>"; };
 		7CA4CC972111AE8800F55EB6 /* Controls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Controls.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +140,8 @@
 		121B255823BF53DB000EB096 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				12E2973723CEC47800B40941 /* PreHelper.h */,
+				12E2973623CEC47800B40941 /* PreHelper.m */,
 				121B255923BF53DB000EB096 /* ALGCDTimer.h */,
 				121B255A23BF53DB000EB096 /* ALGCDTimer.m */,
 			);
@@ -199,6 +207,8 @@
 				121B255F23BF5427000EB096 /* TextViewKeyBoardToolBar.m */,
 				2559C82122B8CFBF00235C6C /* UItextViewPlace.h */,
 				2559C81D22B8CFBF00235C6C /* UItextViewPlace.m */,
+				12E2973923CEFBB700B40941 /* MaskView.h */,
+				12E2973A23CEFBB700B40941 /* MaskView.m */,
 				5D4AA6E8238E6CD100A2081C /* UpdateAlert */,
 			);
 			path = widgets;
@@ -256,14 +266,14 @@
 				121B256823BF5514000EB096 /* Banner */,
 				7CA4CC9A2111AE8800F55EB6 /* AppDelegate.h */,
 				7CA4CC9B2111AE8800F55EB6 /* AppDelegate.m */,
-				7C001B18238D9D60009B33E3 /* PreHelper.h */,
-				7C001B17238D9D60009B33E3 /* PreHelper.m */,
 				2559C81922B8CFBF00235C6C /* category */,
 				2559C81C22B8CFBF00235C6C /* widgets */,
 				7CA4CC9D2111AE8800F55EB6 /* ViewController.h */,
 				7CA4CC9E2111AE8800F55EB6 /* ViewController.m */,
 				121B257923BF5AF4000EB096 /* BannerVC.h */,
 				121B257A23BF5AF4000EB096 /* BannerVC.m */,
+				12E2973C23CF08FA00B40941 /* TestVC.h */,
+				12E2973D23CF08FA00B40941 /* TestVC.m */,
 				2559C82A22B8CFEF00235C6C /* TextViewController.h */,
 				2559C82B22B8CFEF00235C6C /* TextViewController.m */,
 				121B255823BF53DB000EB096 /* Tools */,
@@ -389,6 +399,7 @@
 				2559C82822B8CFBF00235C6C /* LayerButton.m in Sources */,
 				121B256123BF5427000EB096 /* TextViewKeyBoardToolBar.m in Sources */,
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
+				12E2973823CEC47800B40941 /* PreHelper.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
 				7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */,
 				121B255E23BF5402000EB096 /* NSObject+property.m in Sources */,
@@ -401,6 +412,7 @@
 				5D4AA6EE238E6CD100A2081C /* SELUpdateAlertConst.m in Sources */,
 				2559C83022B8E48E00235C6C /* WJProgressView.m in Sources */,
 				121B256D23BF5514000EB096 /* ALBannerView.m in Sources */,
+				12E2973E23CF08FA00B40941 /* TestVC.m in Sources */,
 				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
 				121B255B23BF53DB000EB096 /* ALGCDTimer.m in Sources */,
@@ -408,8 +420,8 @@
 				7CEE5AAC2393AB6B008529D2 /* FloatingView.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
 				7CA68B4F23964C8500FA688F /* OrderProcessAlert.m in Sources */,
+				12E2973B23CEFBB700B40941 /* MaskView.m in Sources */,
 				121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */,
-				7C001B19238D9D60009B33E3 /* PreHelper.m in Sources */,
 				7CA68B4C2396479F00FA688F /* CustomCornerView.m in Sources */,
 				7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */,
 			);
@@ -488,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -540,7 +552,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -561,7 +573,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -586,7 +598,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Controls/PrefixHeader.pch";
 				INFOPLIST_FILE = Controls/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
