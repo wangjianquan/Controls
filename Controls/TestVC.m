@@ -20,13 +20,13 @@
 @implementation TestVC
 -(MaskView *)leftMaskView{
     if (_leftMaskView== nil){
-        _leftMaskView = [[MaskView alloc] initWithFrame:CGRectMake(0, 95, self.view.frame.size.width, 120)];
+        _leftMaskView = [[MaskView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width,250-88)];
     }
     return _leftMaskView;
 }
 -(MaskView *)rightMaskView{
     if (_rightMaskView== nil){
-        _rightMaskView = [[MaskView alloc] initWithFrame:CGRectMake(0, 95, self.view.frame.size.width,120)];
+        _rightMaskView = [[MaskView alloc] initWithFrame:CGRectMake(0, 88, self.view.frame.size.width,250-88)];
     }
     return _rightMaskView;
 }

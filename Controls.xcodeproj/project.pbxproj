@@ -18,6 +18,7 @@
 		121B257723BF57BB000EB096 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 121B257223BF57BA000EB096 /* placeholder@2x.png */; };
 		121B257823BF57BB000EB096 /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257323BF57BB000EB096 /* h4.jpg */; };
 		121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B257A23BF5AF4000EB096 /* BannerVC.m */; };
+		126233E02449B3A00017CB3E /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */; };
 		12E2973823CEC47800B40941 /* PreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973623CEC47800B40941 /* PreHelper.m */; };
 		12E2973B23CEFBB700B40941 /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973A23CEFBB700B40941 /* MaskView.m */; };
 		12E2973E23CF08FA00B40941 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973D23CF08FA00B40941 /* TestVC.m */; };
@@ -66,6 +67,8 @@
 		121B257323BF57BB000EB096 /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		121B257923BF5AF4000EB096 /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
 		121B257A23BF5AF4000EB096 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
+		126233DE2449B39F0017CB3E /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
+		126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
 		12E2973623CEC47800B40941 /* PreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreHelper.m; sourceTree = "<group>"; };
 		12E2973723CEC47800B40941 /* PreHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreHelper.h; sourceTree = "<group>"; };
 		12E2973923CEFBB700B40941 /* MaskView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MaskView.h; sourceTree = "<group>"; };
@@ -142,6 +145,8 @@
 			children = (
 				12E2973723CEC47800B40941 /* PreHelper.h */,
 				12E2973623CEC47800B40941 /* PreHelper.m */,
+				126233DE2449B39F0017CB3E /* MBProgressHUD+Add.h */,
+				126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */,
 				121B255923BF53DB000EB096 /* ALGCDTimer.h */,
 				121B255A23BF53DB000EB096 /* ALGCDTimer.m */,
 			);
@@ -421,6 +426,7 @@
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,
 				7CA68B4F23964C8500FA688F /* OrderProcessAlert.m in Sources */,
 				12E2973B23CEFBB700B40941 /* MaskView.m in Sources */,
+				126233E02449B3A00017CB3E /* MBProgressHUD+Add.m in Sources */,
 				121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */,
 				7CA68B4C2396479F00FA688F /* CustomCornerView.m in Sources */,
 				7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */,

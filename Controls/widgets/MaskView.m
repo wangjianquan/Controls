@@ -36,7 +36,7 @@
         }else{
             CGContextAddArc(ctx, self.center.x - rect.size.width/2, rect.size.height/2, _maskRadius, 0, M_PI * 2, NO);
         }
-    CGContextSetFillColorWithColor(ctx, [[UIColor whiteColor] CGColor]);
+    CGContextSetFillColorWithColor(ctx, [[UIColor yellowColor] CGColor]);
     CGContextFillPath(ctx);
     //        CGContextRelease(ctx);
     }
