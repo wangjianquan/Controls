@@ -10,15 +10,42 @@
 
 @interface HUDVC ()
 
+//网络监听
+@property (nonatomic, strong) AliyunReachability *reachability;
+
 @end
 
 @implementation HUDVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-       //    [MBProgressHUD showText:@"center message !" textPositon:HUDTextPositionCenter];
-      
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    //判断网络
+    _reachability = [AliyunReachability reachabilityForInternetConnection];
+    [_reachability startNotifier];    
+    switch ([self.reachability currentReachabilityStatus]) {
+        case AliyunPVNetworkStatusNotReachable://由播放器底层判断是否有网络
+        {
+            [MBProgressHUD showError:@"当前网络环境为: 不可用" toView:self.view];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWiFi:
+        {
+            [MBProgressHUD showSuccess:@"当前网络环境为: WiFi" toView:self.view];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWWAN:
+        {
+            [MBProgressHUD showSuccess:@"当前网络环境为: 数据流量" toView:self.view];
+        }
+            break;
+        default:
+            break;
+    }
 }
 - (IBAction)top:(id)sender {
     [MBProgressHUD showText:@"top message !" textPositon:HUDTextPositionTop];

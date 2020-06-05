@@ -18,6 +18,7 @@
 		121B257723BF57BB000EB096 /* placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 121B257223BF57BA000EB096 /* placeholder@2x.png */; };
 		121B257823BF57BB000EB096 /* h4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 121B257323BF57BB000EB096 /* h4.jpg */; };
 		121B257B23BF5AF4000EB096 /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 121B257A23BF5AF4000EB096 /* BannerVC.m */; };
+		1240911C248A587D00AEA189 /* AliyunReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1240911B248A587D00AEA189 /* AliyunReachability.m */; };
 		126233E02449B3A00017CB3E /* MBProgressHUD+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */; };
 		12E2973823CEC47800B40941 /* PreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973623CEC47800B40941 /* PreHelper.m */; };
 		12E2973B23CEFBB700B40941 /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 12E2973A23CEFBB700B40941 /* MaskView.m */; };
@@ -69,6 +70,8 @@
 		121B257323BF57BB000EB096 /* h4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = h4.jpg; sourceTree = "<group>"; };
 		121B257923BF5AF4000EB096 /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
 		121B257A23BF5AF4000EB096 /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
+		1240911A248A587D00AEA189 /* AliyunReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AliyunReachability.h; sourceTree = "<group>"; };
+		1240911B248A587D00AEA189 /* AliyunReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AliyunReachability.m; sourceTree = "<group>"; };
 		126233DE2449B39F0017CB3E /* MBProgressHUD+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Add.h"; sourceTree = "<group>"; };
 		126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Add.m"; sourceTree = "<group>"; };
 		12E2973623CEC47800B40941 /* PreHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreHelper.m; sourceTree = "<group>"; };
@@ -153,6 +156,8 @@
 				12EE626B2489F4E500148F77 /* MBProgressHUD.bundle */,
 				126233DE2449B39F0017CB3E /* MBProgressHUD+Add.h */,
 				126233DF2449B39F0017CB3E /* MBProgressHUD+Add.m */,
+				1240911A248A587D00AEA189 /* AliyunReachability.h */,
+				1240911B248A587D00AEA189 /* AliyunReachability.m */,
 				121B255923BF53DB000EB096 /* ALGCDTimer.h */,
 				121B255A23BF53DB000EB096 /* ALGCDTimer.m */,
 			);
@@ -430,6 +435,7 @@
 				5D38A5262313AF680093B002 /* AnimationLabel.m in Sources */,
 				2559C82522B8CFBF00235C6C /* UIView+layer.m in Sources */,
 				121B255B23BF53DB000EB096 /* ALGCDTimer.m in Sources */,
+				1240911C248A587D00AEA189 /* AliyunReachability.m in Sources */,
 				2559C82C22B8CFEF00235C6C /* TextViewController.m in Sources */,
 				7CEE5AAC2393AB6B008529D2 /* FloatingView.m in Sources */,
 				2559C82722B8CFBF00235C6C /* CustomTextView.m in Sources */,

@@ -11,17 +11,73 @@
 
 @interface AppDelegate ()
 
+//网络监听
+@property (nonatomic, strong) AliyunReachability *reachability;
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //判断网络
+    _reachability = [AliyunReachability reachabilityForInternetConnection];
+    [_reachability startNotifier];
+    switch ([self.reachability currentReachabilityStatus]) {
+        case AliyunPVNetworkStatusNotReachable://由播放器底层判断是否有网络
+        {
+            [MBProgressHUD showError:@"当前网络环境为: 不可用" toView:self.window];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWiFi:
+        {
+            [MBProgressHUD showSuccess:@"当前网络环境为: WiFi" toView:self.window];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWWAN:
+        {
+            [MBProgressHUD showSuccess:@"当前网络环境为: 数据流量" toView:self.window];
+        }
+            break;
+        default:
+            break;
+    }
     
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(reachabilityChanged)
+//                                                 name:AliyunPVReachabilityChangedNotification
+//                                               object:nil];
     // Override point for customization after application launch.
     return YES;
 }
+#pragma mark - 网络状态改变
+- (void)reachabilityChanged {
+    [self networkChangedToShowPopView];
+}
 
+//网络状态判定
+- (BOOL)networkChangedToShowPopView {
+    BOOL ret = NO;
+    switch ([self.reachability currentReachabilityStatus]) {
+        case AliyunPVNetworkStatusNotReachable://由播放器底层判断是否有网络
+        {
+            [MBProgressHUD showText:@"当前网络环境为: 不可用"];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWiFi:
+        {
+            [MBProgressHUD showText:@"当前网络环境为: WiFi"];
+        }
+            break;
+        case AliyunPVNetworkStatusReachableViaWWAN:
+        {
+            [MBProgressHUD showText:@"当前网络环境为: 数据流量"];
+        }
+            break;
+        default:
+            break;
+    }
+    return ret;
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
