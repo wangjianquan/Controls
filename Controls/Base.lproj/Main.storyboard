@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkd-kX-veI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkd-kX-veI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,9 +32,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="xuezhiqian" translatesAutoresizingMaskIntoConstraints="NO" id="VjS-Hk-F3X" customClass="IBDesignableImageView">
-                                <rect key="frame" x="16" y="88" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xuezhiqian" translatesAutoresizingMaskIntoConstraints="NO" id="VjS-Hk-F3X" customClass="IBDesignableImageView">
+                                <rect key="frame" x="15" y="59" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="G1x-su-10F"/>
+                                    <constraint firstAttribute="height" constant="80" id="SDd-Q1-S35"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="60"/>
@@ -57,11 +60,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDr-UA-pOR" customClass="LayerButton">
-                                <rect key="frame" x="118" y="102" width="86" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HDr-UA-pOR" customClass="LayerButton">
+                                <rect key="frame" x="110" y="59" width="250" height="30"/>
                                 <color key="backgroundColor" red="0.32549019610000002" green="0.55294117649999996" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="TextViewKeyBoardToolBar">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -89,8 +91,95 @@
                                     <segue destination="gbc-q5-1et" kind="push" id="539-mq-mZz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku8-Bz-4mJ" customClass="LayerButton">
+                                <rect key="frame" x="110" y="104" width="44" height="30"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bXZ-RK-6OS"/>
+                                    <constraint firstAttribute="height" constant="30" id="oXG-Di-DET"/>
+                                </constraints>
+                                <state key="normal" title="Hud"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="masksToBounds" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="3" height="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="hudAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rm-rh-weU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="EdageLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTR-sy-Tlh">
+                                <rect key="frame" x="15" y="154" width="71" height="16"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-dq-9qy" customClass="LayerButton">
+                                <rect key="frame" x="162" y="104" width="61" height="30"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rLL-La-g6Z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="alertView"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="alertAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9DV-jo-osK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JTR-sy-Tlh" firstAttribute="leading" secondItem="VjS-Hk-F3X" secondAttribute="leading" id="8zJ-hb-tk2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HDr-UA-pOR" secondAttribute="trailing" constant="15" id="982-hr-dC3"/>
+                            <constraint firstItem="VjS-Hk-F3X" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="GIC-OD-i2c"/>
+                            <constraint firstItem="ku8-Bz-4mJ" firstAttribute="leading" secondItem="VjS-Hk-F3X" secondAttribute="trailing" constant="15" id="GRq-eK-mfk"/>
+                            <constraint firstItem="hlw-dq-9qy" firstAttribute="leading" secondItem="ku8-Bz-4mJ" secondAttribute="trailing" constant="8" symbolic="YES" id="LIl-Dt-Uuv"/>
+                            <constraint firstItem="VjS-Hk-F3X" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="W0z-vy-msm"/>
+                            <constraint firstItem="ku8-Bz-4mJ" firstAttribute="top" secondItem="HDr-UA-pOR" secondAttribute="bottom" constant="15" id="ZnX-bX-I5D"/>
+                            <constraint firstItem="hlw-dq-9qy" firstAttribute="top" secondItem="ku8-Bz-4mJ" secondAttribute="top" id="czf-4V-zQ2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="JTR-sy-Tlh" secondAttribute="trailing" symbolic="YES" id="kmh-Vj-qhS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hlw-dq-9qy" secondAttribute="trailing" symbolic="YES" id="mPO-pY-xUK"/>
+                            <constraint firstItem="JTR-sy-Tlh" firstAttribute="top" secondItem="VjS-Hk-F3X" secondAttribute="bottom" constant="15" id="nBK-UU-obe"/>
+                            <constraint firstItem="HDr-UA-pOR" firstAttribute="leading" secondItem="VjS-Hk-F3X" secondAttribute="trailing" constant="15" id="uIL-IX-PQk"/>
+                            <constraint firstItem="HDr-UA-pOR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="x9X-JY-D6q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="e7M-yV-8wM">
@@ -100,10 +189,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="edgeLabel" destination="JTR-sy-Tlh" id="fJu-Xc-Nbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="878" y="60"/>
+            <point key="canvasLocation" x="877.60000000000002" y="59.820089955022496"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="YuV-NR-TuE">
