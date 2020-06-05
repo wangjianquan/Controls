@@ -11,7 +11,7 @@
 
 @interface PreHelper : NSObject
 + (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
-+ (UIColor*)randomColor;
++ (UIColor *)randomColor;
 #pragma mark -- 标签颜色
 + (UIColor *)textColorWithText:(NSString *)typeString;
 
@@ -98,7 +98,7 @@
 
 + (UIImage *)createImageWithColor:(UIColor *)color size:(CGSize)size radius:(CGFloat)radius;
 #pragma mark -- 绘图
-+ (UIImage*)imageChangeColor:(UIColor*)color;
++ (UIImage*)imageChangeColor:(UIColor *)color;
 + (UIImage*)circleImage:(UIImage*)image strokeColor:(UIColor *)color withParam:(CGFloat) inset;
 
 

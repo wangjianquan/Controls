@@ -1,9 +1,9 @@
 //
-//  MBProgressHUD+Add.m
-//  视频客户端
+//  MBProgressHUD+Add.h
 //
-//  Created by mj on 13-4-18.
-//  Copyright (c) 2013年 itcast. All rights reserved.
+//
+//  Created by wjq on 16-6-18.
+//  Copyright (c) 2016年 Apple. All rights reserved.
 //
 
 #import "MBProgressHUD+Add.h"
@@ -16,19 +16,70 @@
     if (view == nil) view = [UIApplication sharedApplication].keyWindow;
     // 快速显示一个提示信息
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    UIImage *image = [[UIImage imageNamed:icon] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+    //设置模式
+    hud.mode = MBProgressHUDModeCustomView;
     hud.label.text = text;
+
+    UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"MBProgressHUD.bundle/%@", icon]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
     // 设置图片
     hud.customView = imageView;
-    // 再设置模式
-    hud.mode = MBProgressHUDModeCustomView;
-    
+    hud.square = YES;
     // 隐藏时候从父控件中移除
     hud.removeFromSuperViewOnHide = YES;
+    // 1.5秒之后再消失
+    [hud hideAnimated:YES afterDelay:1.5];
+}
+
++ (void)showText:(NSString *)text textPositon:(HUDTextPosition)position{
+    UIView * view = [UIApplication sharedApplication].keyWindow;
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = NSLocalizedString(text, @"HUD message title");
     
-    // 1秒之后再消失
-    [hud hideAnimated:YES afterDelay:0.7];
+    hud.label.textColor = [UIColor whiteColor];
+    hud.bezelView.blurEffectStyle = UIBlurEffectStyleDark;
+    
+    // Move to bottm center.
+    CGFloat screenHeight =  [UIScreen mainScreen].bounds.size.height;
+    if (position == HUDTextPositionTop) {
+        hud.offset = CGPointMake(0.f, -(screenHeight/3));
+    } else if (position == HUDTextPositionBottom){
+        hud.offset = CGPointMake(0.f, screenHeight/3);
+    }else{
+        hud.offset = CGPointMake(0.f, 0.f);
+    }
+    [hud hideAnimated:YES afterDelay:1.5f];
+}
+
++ (void)showText:(NSString *)text{
+    UIView * view = [UIApplication sharedApplication].keyWindow;
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = NSLocalizedString(text, @"HUD message title");
+    hud.label.numberOfLines = 0;
+    hud.label.textColor = [UIColor whiteColor];
+    hud.bezelView.blurEffectStyle = UIBlurEffectStyleDark;
+    [hud hideAnimated:YES afterDelay:1.5f];
+}
+
+#pragma mark 显示loading信息
++ (MBProgressHUD *)showLoading:(NSString *)loadingText toView:(UIView *)view{
+    if (view == nil) view = [UIApplication sharedApplication].keyWindow;
+    // 快速显示一个提示信息
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+    hud.label.text = loadingText;
+    // 隐藏时候从父控件中移除
+    hud.removeFromSuperViewOnHide = YES;
+    hud.backgroundView.style = MBProgressHUDBackgroundStyleSolidColor;
+    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.3f];
+    return hud;
+}
+
++ (MBProgressHUD *)showLoading:(NSString *)loadingText{
+    return [self showLoading:loadingText toView:nil];
 }
 
 #pragma mark 显示错误信息
@@ -41,46 +92,25 @@
     [self show:success icon:@"success.png" view:view];
 }
 
-#pragma mark 显示一些信息
-+ (MBProgressHUD *)showMessag:(NSString *)message toView:(UIView *)view {
+
++ (void)showSuccess:(NSString *)success
+{
+    [self showSuccess:success toView:nil];
+}
+
++ (void)showError:(NSString *)error
+{
+    [self showError:error toView:nil];
+}
+
+
++ (void)hideHUDForView:(UIView *)view{
     if (view == nil) view = [UIApplication sharedApplication].keyWindow;
-    // 快速显示一个提示信息
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    hud.label.text = message;
-    // 隐藏时候从父控件中移除
-    hud.removeFromSuperViewOnHide = YES;
-    hud.backgroundView.color = [UIColor colorWithWhite:0.f alpha:0.1f];
-    return hud;
+    [self hideHUDForView:view animated:YES];
 }
 
-+ (void)showText:(NSString *)text{
-    UIView * view = [UIApplication sharedApplication].keyWindow;
-    // 快速显示一个提示信息
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    // Set the text mode to show only text.
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = NSLocalizedString(text, @"HUD message title");
-    [hud hideAnimated:YES afterDelay:3.f];
-}
-
-+ (void)showText:(NSString *)text textPositon:(HUDTextPosition)position{
-    UIView * view = [UIApplication sharedApplication].keyWindow;
-    // 快速显示一个提示信息
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    // Set the text mode to show only text.
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = NSLocalizedString(text, @"HUD message title");
-    // Move to bottm center.
-    CGFloat screenHeight =  [UIScreen mainScreen].bounds.size.height;
-    if (position == HUDTextPositionTop) {
-        hud.offset = CGPointMake(0.f, -(screenHeight/3));
-    } else if (position == HUDTextPositionBottom){
-        hud.offset = CGPointMake(0.f, screenHeight/3);
-    }else{
-        hud.offset = CGPointMake(0.f, 0.f);
-    }
-    
-    [hud hideAnimated:YES afterDelay:3.f];
++ (void)hideHUD{
+    [self hideHUDForView:nil];
 }
 
 @end

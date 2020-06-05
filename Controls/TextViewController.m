@@ -54,7 +54,7 @@
         //        self.tempRect.size.height = textHeight;
         CGRect tempRect = weakSelf.keyboardToolBar.frame;
         tempRect.size.height = textHeight;
-        self.keyboardToolBar.frame = tempRect;
+        weakSelf.keyboardToolBar.frame = tempRect;
         
     };
     //    self.keyboardToolBar.placeTextView.yz_textHeightChangeBlock = ^(NSString * _Nonnull text, CGFloat textHeight) {

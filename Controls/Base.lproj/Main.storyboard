@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkd-kX-veI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hkd-kX-veI">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -22,7 +22,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcM-oZ-YYA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="423"/>
+            <point key="canvasLocation" x="1708" y="324"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -92,13 +92,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ku8-Bz-4mJ" customClass="LayerButton">
-                                <rect key="frame" x="110" y="104" width="44" height="30"/>
+                                <rect key="frame" x="110" y="104" width="86" height="30"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="bXZ-RK-6OS"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="bXZ-RK-6OS"/>
                                     <constraint firstAttribute="height" constant="30" id="oXG-Di-DET"/>
                                 </constraints>
-                                <state key="normal" title="Hud"/>
+                                <state key="normal" title="HudAction"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="10"/>
@@ -125,6 +125,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="hudAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Rm-rh-weU"/>
+                                    <segue destination="467-AN-Dw7" kind="show" id="Xhs-oI-yc3"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="EdageLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTR-sy-Tlh">
@@ -135,7 +136,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlw-dq-9qy" customClass="LayerButton">
-                                <rect key="frame" x="162" y="104" width="61" height="30"/>
+                                <rect key="frame" x="204" y="104" width="61" height="30"/>
                                 <color key="backgroundColor" red="0.1450980392" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="rLL-La-g6Z"/>
@@ -195,7 +196,97 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877.60000000000002" y="59.820089955022496"/>
+            <point key="canvasLocation" x="78" y="-164"/>
+        </scene>
+        <!--HUDVC-->
+        <scene sceneID="5jg-Z3-ghL">
+            <objects>
+                <viewController id="467-AN-Dw7" customClass="HUDVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EjN-ia-mgU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Oib-oX-bsA">
+                                <rect key="frame" x="15" y="59" width="100" height="230"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kvI-Ce-WRB">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="hud Top">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="top:" destination="467-AN-Dw7" eventType="touchUpInside" id="6z5-6a-2TB"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lk0-kr-cJo">
+                                        <rect key="frame" x="0.0" y="40" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="hud Bottom">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="bottom:" destination="467-AN-Dw7" eventType="touchUpInside" id="pL7-ks-Rob"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydr-Ze-x3x">
+                                        <rect key="frame" x="0.0" y="80" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="hud Loading">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="loading:" destination="467-AN-Dw7" eventType="touchUpInside" id="1vr-Eu-Mal"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-eb-bo4">
+                                        <rect key="frame" x="0.0" y="120" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="hud Text">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onlyText:" destination="467-AN-Dw7" eventType="touchUpInside" id="7bo-f1-Sfo"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0dj-ve-KmS">
+                                        <rect key="frame" x="0.0" y="160" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="success">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="success:" destination="467-AN-Dw7" eventType="touchUpInside" id="oSq-th-iIZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3k-Ea-uYg">
+                                        <rect key="frame" x="0.0" y="200" width="100" height="30"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.58039215690000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="error">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="error:" destination="467-AN-Dw7" eventType="touchUpInside" id="A7U-AZ-fZp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="K0u-Er-VL0"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Oib-oX-bsA" firstAttribute="leading" secondItem="goO-DV-DaW" secondAttribute="leading" constant="15" id="Dz3-3L-16E"/>
+                            <constraint firstItem="Oib-oX-bsA" firstAttribute="top" secondItem="goO-DV-DaW" secondAttribute="top" constant="15" id="suc-ZW-qSx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="goO-DV-DaW"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u1A-Ff-gck"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zQ9-JG-hHj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="341"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="YuV-NR-TuE">
@@ -229,7 +320,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xmm-Ac-ggq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80.799999999999997" y="60.591133004926114"/>
+            <point key="canvasLocation" x="-796" y="-164"/>
         </scene>
     </scenes>
     <resources>

@@ -144,13 +144,7 @@
 #pragma mark --
 
 - (IBAction)hudAction:(UIButton *)sender {
-    [MBProgressHUD showText:@"top message !" textPositon:HUDTextPositionTop];
-    //    [MBProgressHUD showText:@"center message !" textPositon:HUDTextPositionCenter];
-    MBProgressHUD *hud =  [MBProgressHUD showMessag:@"showMessag " toView:nil];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [hud hideAnimated:YES];
-    });
-    [MBProgressHUD showText:@"bottom message !" textPositon:HUDTextPositionBottom];
+   
 
 }
 - (IBAction)alertAction:(id)sender {
