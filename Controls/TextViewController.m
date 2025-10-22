@@ -32,34 +32,35 @@
     return _textView;
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    [self.view addSubview:self.textView];
-//    // Do any additional setup after loading the view.
-//}
 - (TextViewKeyBoardToolBar *)keyboardToolBar{
     if (!_keyboardToolBar) {
-        _keyboardToolBar = [[TextViewKeyBoardToolBar alloc]initWithFrame:CGRectMake(0,SCREEN_HEIGHT-keyboardToolBar_height - SafeAreaBottomHeight ,SCREEN_WIDTH, keyboardToolBar_height)];
-        //        _keyboardToolBar = [[TextViewKeyBoardToolBar alloc]init];
+        _keyboardToolBar = [[TextViewKeyBoardToolBar alloc]initWithFrame:CGRectMake(0,SCREEN_HEIGHT-keyboardToolBar_height - kTabBarHeight ,SCREEN_WIDTH, keyboardToolBar_height)];
         _keyboardToolBar.delegate = self;
+        WS(weakSelf);
         _keyboardToolBar.sendTextBlock = ^(NSString *string) {
-            NSLog(@"%@",string);
-        };        
+            CGRect tempRect = weakSelf.keyboardToolBar.frame;
+            tempRect.size.height = keyboardToolBar_height;
+            tempRect.origin.y = SCREEN_HEIGHT - CGRectGetHeight(tempRect) - kTabBarHeight;
+            weakSelf.keyboardToolBar.frame = tempRect;
+            [MBProgressHUD showText:string];
+        };
     }
     return _keyboardToolBar;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
+    [self.view addSubview:self.textView];
+    self.textView.backgroundColor = [UIColor redColor];
     self.keyboardToolBar.delegate = self;
     WS(weakSelf);
     self.keyboardToolBar.textHeightChangeBlock = ^(NSString * _Nonnull text, CGFloat textHeight) {
         NSLog(@"%@ , %f",text, textHeight);
-        //        self.tempRect.size.height = textHeight;
         CGRect tempRect = weakSelf.keyboardToolBar.frame;
         tempRect.size.height = textHeight;
-        self.keyboardToolBar.frame = tempRect;
-        
+//        tempRect.origin.y = SCREEN_HEIGHT - (self.keyBoardHeight + textHeight);
+        weakSelf.keyboardToolBar.frame = tempRect;
     };
     //    self.keyboardToolBar.placeTextView.yz_textHeightChangeBlock = ^(NSString * _Nonnull text, CGFloat textHeight) {
     //        NSLog(@"%@ , %f",text, textHeight);

@@ -13,6 +13,10 @@
     _progress = MIN(1, MAX(0, progress));
     [self setNeedsDisplay];
 }
+- (void)setProgressColor:(UIColor *)progressColor{
+    _progressColor = progressColor;
+    [self setNeedsDisplay];
+}
 - (instancetype)init{
     if (self = [super init]) {
         self.backgroundColor = [UIColor clearColor];
@@ -42,12 +46,19 @@
     UIBezierPath * bezierPath = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:YES];
     [bezierPath addLineToPoint:center];
     [bezierPath closePath];
-    
-    [[UIColor colorWithWhite:1.0 alpha:0.2] setFill];
+    if (_progressColor) {
+        [_progressColor setFill];
+    } else {
+        [[UIColor colorWithWhite:1.0 alpha:0.2] setFill];
+    }
     [bezierPath fill];
     
     UIBezierPath * closePath = [UIBezierPath bezierPathWithArcCenter:center radius:radius + 5 startAngle: startAngle endAngle: (M_PI*2) + startAngle clockwise:YES];
-    [[UIColor colorWithWhite:1.0 alpha:0.2] setStroke];
+    if (_progressColor) {
+        [_progressColor setStroke];
+    } else {
+        [[UIColor colorWithWhite:1.0 alpha:0.2] setStroke];
+    }
     [closePath stroke];
 }
 

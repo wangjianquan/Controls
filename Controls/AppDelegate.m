@@ -7,47 +7,112 @@
 //
 
 #import "AppDelegate.h"
-#import "SELUpdateAlert.h"
+#import "OrientationManager.h"
+#import "CustomTabBarController.h"
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+ 
+- (void)appDidEnterBackground:(NSNotification *)notification {
+    UIViewController *vc = [PreHelper getCurrentViewControll];
+    NSLog(@"vc=%@", vc);
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    // Override point for customization after application launch.
+//    NSUserDefaults *useDef = [NSUserDefaults standardUserDefaults];
+//    if (![useDef boolForKey:@"firstStart"]) {
+//        [useDef setBool:YES forKey:@"firstStart"];
+//        // 第一次清空用户数据
+//        [User clearAccount];
+//        application.applicationIconBadgeNumber = 0;
+//        // 如果是第一次进入引导页
+//        self.window.rootViewController = [[GuideViewController alloc] init];
+//    }else{
+        // 否则直接进入应用
+        self.window.rootViewController = [[CustomTabBarController alloc]init];
+//    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+    [self.window makeKeyAndVisible];    
     return YES;
 }
-
+- (void)orientationDidChange:(NSNotification *)notification {
+    // 处理方向变化逻辑
+    UIDeviceOrientation orientation = [UIDevice currentDevice].orientation;
+    NSLog(@"设备方向已改变: %ld", (long)orientation);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    // Sent when the application is about to move from active to inactive state.
 }
-
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    // 应用进入后台
 }
-
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    // 应用将进入前台
 }
-
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // 应用变为活跃状态
 }
-
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    // 应用即将终止
 }
 
+- (UIInterfaceOrientationMask)application:(UIApplication *)application
+  supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    
+    // 获取当前活动控制器
+    UIViewController *topController = [self topViewControllerForWindow:window];
+    
+    if (!topController) return UIInterfaceOrientationMaskAll;
+    
+    // 获取控制器的方向模式
+    OrientationMode mode = [[OrientationManager shared] orientationModeForController:topController];
+    
+    switch (mode) {
+        case OrientationModePortrait:
+            return UIInterfaceOrientationMaskPortrait;
+        case OrientationModeLandscape:
+            return UIInterfaceOrientationMaskLandscapeRight;
+        case OrientationModeAll:
+        default:
+            return UIInterfaceOrientationMaskAll;
+    }
+}
+
+// 获取窗口的顶层控制器
+- (UIViewController *)topViewControllerForWindow:(UIWindow *)window {
+    UIViewController *rootVC = window.rootViewController;
+    return [self topViewControllerFrom:rootVC];
+}
+
+- (UIViewController *)topViewControllerFrom:(UIViewController *)controller {
+    if (controller == nil) return nil;
+    
+    if ([controller isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *nav = (UINavigationController *)controller;
+        return [self topViewControllerFrom:nav.topViewController];
+    }
+    
+    if ([controller isKindOfClass:[UITabBarController class]]) {
+        UITabBarController *tab = (UITabBarController *)controller;
+        return [self topViewControllerFrom:tab.selectedViewController];
+    }
+    
+    if (controller.presentedViewController) {
+        return [self topViewControllerFrom:controller.presentedViewController];
+    }
+    
+    return controller;
+}
 
 @end

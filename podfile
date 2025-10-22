@@ -1,5 +1,6 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '13.0'
 
 target 'Controls' do
   # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
@@ -8,4 +9,22 @@ target 'Controls' do
   # Pods for Controls
     pod 'Masonry'
     pod 'MBProgressHUD'
+    pod 'YBPopupMenu'
+    pod 'iCarousel'
+    pod 'SDWebImage'
+    pod 'AFNetworking'
+    pod "RATreeView"
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'  # 统一 Pod 部署目标
+      config.build_settings['ENABLE_BITCODE'] = 'NO'  # 禁用 Bitcode
+    end
+  end
+  # 解决模拟器架构警告
+  installer.pods_project.build_configurations.each do |config|
+    config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+  end
 end

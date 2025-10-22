@@ -50,7 +50,8 @@
     }
     NSLog(@"====%@",description);
     SELUpdateAlert *updateAlert = [[SELUpdateAlert alloc]initVersion:version description:description];
-    [[UIApplication sharedApplication].delegate.window addSubview:updateAlert];
+    [[PreHelper currentKeyWindow] addSubview:updateAlert];
+//    [[UIApplication sharedApplication].delegate.window addSubview:updateAlert];
 }
 
 /**
@@ -64,7 +65,8 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
 + (void)showUpdateAlertWithVersion:(NSString *)version Description:(NSString *)description
 {
     SELUpdateAlert *updateAlert = [[SELUpdateAlert alloc]initVersion:version description:description];
-    [[UIApplication sharedApplication].delegate.window addSubview:updateAlert];
+    [[PreHelper currentKeyWindow] addSubview:updateAlert];
+//    [[UIApplication sharedApplication].delegate.window addSubview:updateAlert];
 }
 
 - (instancetype)initVersion:(NSString *)version description:(NSString *)description
@@ -81,7 +83,7 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
 
 - (void)_setupUI
 {
-    self.frame = [UIScreen mainScreen].bounds;
+    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     self.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3/1.0];
     
     //获取更新内容高度
@@ -99,8 +101,7 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
     if (realHeight > DEFAULT_MAX_HEIGHT) {
         scrollEnabled = YES;
         descHeight = DEFAULT_MAX_HEIGHT - Ratio(314);
-    }else
-    {
+    } else {
         maxHeight = realHeight;
     }
     
@@ -162,19 +163,18 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
     UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
     cancelButton.center = CGPointMake(CGRectGetMaxX(updateView.frame), CGRectGetMinY(updateView.frame));
     cancelButton.bounds = CGRectMake(0, 0, Ratio(36), Ratio(36));
-    [cancelButton setTitle:@"暂不更新" forState:UIControlStateNormal];
-//    [cancelButton setImage:[[UIImage imageNamed:@"xuezhiqian"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
+//    [cancelButton setTitle:@"X" forState:UIControlStateNormal];
+    [cancelButton setImage:[[UIImage imageNamed:@"关闭"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] forState:UIControlStateNormal];
     [cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     [bgView addSubview:cancelButton];
-    cancelButton.hidden = YES;
+//    cancelButton.hidden = YES;
     
     //显示更新
     [self showWithAlert:bgView];
 }
 
 /** 更新按钮点击事件 跳转AppStore更新 */
-- (void)updateVersion
-{
+- (void)updateVersion{
 //    NSString *appId = @"1280760449";
 //    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", appId];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
@@ -192,7 +192,6 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
  @param alert 添加动画的View
  */
 - (void)showWithAlert:(UIView*)alert{
-    
     CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     animation.duration = SELAnimationTimeInterval;
     
@@ -204,21 +203,16 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
     animation.values = values;
     [alert.layer addAnimation:animation forKey:nil];
 }
-
-
 /** 添加Alert出场动画 */
 - (void)dismissAlert{
-    
     [UIView animateWithDuration:SELAnimationTimeInterval animations:^{
         self.transform = (CGAffineTransformMakeScale(1.5, 1.5));
         self.backgroundColor = [UIColor clearColor];
         self.alpha = 0;
     }completion:^(BOOL finished) {
         [self removeFromSuperview];
-    } ];
-    
+    }];
 }
-
 /**
  计算字符串高度
  @param string 字符串
@@ -226,12 +220,8 @@ description 格式如 @"1.xxxxxx\n2.xxxxxx"
  @param maxSize 最大Size
  @return 计算得到的Size
  */
-- (CGSize)_sizeofString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize
-{
+- (CGSize)_sizeofString:(NSString *)string font:(UIFont *)font maxSize:(CGSize)maxSize{
     return [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font} context:nil].size;
 }
-
-
-
 
 @end

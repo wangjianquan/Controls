@@ -53,10 +53,9 @@
 - (UIImageView *)bgImageView{
     if (!_bgImageView) {
         _bgImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        _bgImageView.image       = [UIImage imageNamed:@"缺省图"];
+        _bgImageView.image       = [UIImage imageNamed:@"xuezhiqian"];
         _bgImageView.contentMode  = UIViewContentModeScaleAspectFit;
         _bgImageView.userInteractionEnabled = YES;
-
     }
     return _bgImageView;
 }
@@ -89,7 +88,7 @@
     if (!_cancelBtn) {
         _cancelBtn = [UIButton buttonWithType: UIButtonTypeSystem];
        [_cancelBtn setBackgroundColor:[UIColor orangeColor]];
-       [_cancelBtn setBackgroundImage:[UIImage imageNamed:@"cancel"] forState:UIControlStateNormal];
+       [_cancelBtn setBackgroundImage:[UIImage imageNamed:@"ppt-back"] forState:UIControlStateNormal];
        [_cancelBtn addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
     }
     return _cancelBtn;

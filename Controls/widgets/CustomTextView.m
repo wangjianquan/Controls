@@ -20,9 +20,10 @@
 @end
 
 @implementation CustomTextView
+
 - (UITextView *)placeholderView{
     if (!_placeholderView) {
-        UITextView * placeholderView  = [[UITextView alloc]init];
+        UITextView * placeholderView = [[UITextView alloc] init];
         _placeholderView = placeholderView;
         _placeholderView.scrollEnabled = NO;
         _placeholderView.showsHorizontalScrollIndicator = NO;
@@ -36,21 +37,18 @@
     return _placeholderView;
 }
 
-
 - (void)awakeFromNib{
     [super awakeFromNib];
     [self setUp];
 }
-- (instancetype)init
-{
+- (instancetype)init{
     self = [super init];
     if (self) {
         [self setUp];
     }
     return self;
 }
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
+- (instancetype)initWithCoder:(NSCoder *)coder{
     self = [super initWithCoder:coder];
     if (self) {
         [self setUp];
@@ -87,9 +85,7 @@
 }
 
 - (void)setMaxNumberOfLines:(NSUInteger)maxNumberOfLines{
-    
     _maxNumberOfLines = maxNumberOfLines;
-    
     //计算最大高度 = (每行高度* 总行数 + 文字上下间距)
     _maxTextHeight = ceil(self.font.lineHeight * maxNumberOfLines + self.textContainerInset.top + self.textContainerInset.bottom);
 }
@@ -103,7 +99,6 @@
 - (void)setYz_textHeightChangeBlock:(void (^)(NSString *, CGFloat))yz_textHeightChangeBlock{
     _yz_textHeightChangeBlock = yz_textHeightChangeBlock;
     [self textDidChange];
-    
 }
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor{
@@ -117,36 +112,23 @@
 }
 
 - (void)textDidChange{
-    
     //占位符隐藏 = 文字的长度大于0
     self.placeholderView.hidden = self.text.length > 0;
-    
     NSInteger height = ceil([self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height);
-    
     if (_textHeight != height) { //高度不一样, 就改变高度
-        
         //最大高度, 可以滚动
         self.scrollEnabled = height > _maxTextHeight && _maxTextHeight > 0;
-        
         _textHeight = height;
-        if (_yz_textHeightChangeBlock && self.scrollEnabled == NO) { // && self.scrollEnabled == NO
+        if (_yz_textHeightChangeBlock && self.scrollEnabled == NO) {
             _yz_textHeightChangeBlock(self.text, height);
             [self.superview layoutIfNeeded];
             self.placeholderView.frame = self.bounds;
         }
     }
-    
 }
 
 - (void)dealloc{
     [[NSNotificationCenter defaultCenter]removeObserver:self];
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

@@ -12,5 +12,5 @@ IB_DESIGNABLE
 @interface WJProgressView : UIView
 
 @property (assign, nonatomic) IBInspectable CGFloat progress;
-
+@property (nullable, nonatomic,copy) IBInspectable UIColor *progressColor;
 @end
