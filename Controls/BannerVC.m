@@ -21,11 +21,12 @@
 
 -(ALBannerView *)bannerView{
     if (!_bannerView) {
-        _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, 0 , SCREEN_WIDTH, SCREEN_WIDTH/2 )];
+        _bannerView = [[ALBannerView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/2)];
         __weak typeof(self) weakSelf = self;
-        _bannerView.bannerSelectBlock = ^(NSInteger index) {
-            weakSelf.navigationItem.title = [NSString stringWithFormat:@"%ld",index];
+        _bannerView.bannerSelectBlock = ^(ALBannerModel * _Nonnull banner) {
+            
         };
+        _bannerView.backgroundColor = [UIColor redColor];
     }
     return _bannerView;
 }
@@ -35,17 +36,12 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
-        
     }
     return _tableView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-//        CGFloat imageHeight = imageWidth*312*1.0/686;
-
-    
-    
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
     [self.view addSubview:self.bannerView];
     self.tableView.tableHeaderView = self.bannerView;
     self.bannerView.loadBanner = YES;

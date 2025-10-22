@@ -88,7 +88,13 @@
            corner.rectCorner = UIRectCornerTopRight | UIRectCornerBottomLeft;
     }];
 }
+- (void)migrationPop{
+    [ProjectMigrationPop showAlert:@"添加移动动画，使视图跟随键盘移动。" otherSettings:^(ProjectMigrationPop * _Nonnull orderProcess) {
+
+    }];
+}
 - (void)openHUDVC{
+    
     [self.navigationController pushViewController:[[HUDVC alloc] init] animated:YES];
 }
 
@@ -116,6 +122,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor systemBackgroundColor];
     [self.view addSubview:self.keyboardToolBar];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"轮播图" style:(UIBarButtonItemStylePlain) target:self action:@selector(openBannerVC)];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"videoAction" style:(UIBarButtonItemStylePlain) target:self action:@selector(alertCorner)];
@@ -141,7 +148,7 @@
     [self.view addSubview:btn2];
     
     UIButton *btn3 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn3.frame = CGRectMake(CGRectGetMaxX(btn2.frame) + 15, CGRectGetMinY(btn1.frame), 120, 30);
+    btn3.frame = CGRectMake(CGRectGetMaxX(btn2.frame) + 15, CGRectGetMinY(btn1.frame), 100, 30);
     btn3.backgroundColor = [UIColor brownColor];
     btn3.titleLabel.font = [UIFont systemFontOfSize:13];
     [btn3 setTitle:@"updateAlert" forState:UIControlStateNormal];
@@ -149,7 +156,7 @@
     [self.view addSubview:btn3];
     
     UIButton *btn4 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn4.frame = CGRectMake(15, CGRectGetMaxY(btn1.frame)+15, 120, 30);
+    btn4.frame = CGRectMake(15, CGRectGetMaxY(btn1.frame)+15, 100, 30);
     btn4.backgroundColor = [UIColor brownColor];
     btn4.titleLabel.font = [UIFont systemFontOfSize:13];
     [btn4 setTitle:@"orderAlert" forState:UIControlStateNormal];
@@ -157,15 +164,25 @@
     [self.view addSubview:btn4];
     
     UIButton *btn5 = [UIButton buttonWithType:UIButtonTypeCustom];
-    btn5.frame = CGRectMake(CGRectGetMaxX(btn4.frame)+5, CGRectGetMaxY(btn1.frame)+15, 60, 30);
+    btn5.frame = CGRectMake(CGRectGetMaxX(btn4.frame)+15, CGRectGetMaxY(btn1.frame)+15, 100, 30);
     btn5.backgroundColor = [UIColor brownColor];
     btn5.titleLabel.font = [UIFont systemFontOfSize:13];
     [btn5 setTitle:@"HUDVC" forState:UIControlStateNormal];
     [btn5 addTarget:self action:@selector(openHUDVC) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn5];
     
+    UIButton *btn6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    btn6.frame = CGRectMake(CGRectGetMaxX(btn5.frame)+15, CGRectGetMaxY(btn1.frame)+15, 100, 30);
+    btn6.backgroundColor = [UIColor brownColor];
+    btn6.titleLabel.font = [UIFont systemFontOfSize:13];
+    [btn6 setTitle:@"migrationPop" forState:UIControlStateNormal];
+    [btn6 addTarget:self action:@selector(migrationPop) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn6];
+    
+    
+    
         
-    _animationLabel = [[AnimationLabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(btn5.frame)+5, CGRectGetMaxY(btn1.frame)+15, self.view.frame.size.width/2, 23)];
+    _animationLabel = [[AnimationLabel alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(btn4.frame)+15, self.view.frame.size.width/2, 23)];
     _animationLabel.text = @"AnimationLabel测试：当内容文字的宽度大于当前控件的宽度时，内容横向滚动，否则不滚动";
     _animationLabel.textColor = [UIColor blackColor];
     _animationLabel.font = [UIFont systemFontOfSize:14];
@@ -174,7 +191,7 @@
     [self.view addSubview:_animationLabel];
     [_animationLabel startAnimation];
 
-    _edgeLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, CGRectGetMaxY(_animationLabel.frame)+15, 60, 18)];
+    _edgeLabel = [[UILabel alloc]initWithFrame:CGRectMake(CGRectGetMaxX(_animationLabel.frame)+15, CGRectGetMinY(_animationLabel.frame), 60, 18)];
     _edgeLabel.contentInsets = UIEdgeInsetsMake(2, 4, 2, 4);
     _edgeLabel.text = @"内边距label";
     _edgeLabel.font = [UIFont systemFontOfSize:12];

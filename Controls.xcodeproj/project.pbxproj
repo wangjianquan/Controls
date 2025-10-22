@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -51,10 +51,16 @@
 		5DA286542EA77CAD00B777AB /* MaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA286532EA77CAD00B777AB /* MaskView.m */; };
 		5DA286592EA77CE300B777AB /* BannerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA286582EA77CE300B777AB /* BannerVC.m */; };
 		5DA2865A2EA77CE300B777AB /* HUDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA286562EA77CE300B777AB /* HUDVC.m */; };
+		5DC18E3A2EA880A800473FDE /* ProjectMigrationPop.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC18E382EA880A800473FDE /* ProjectMigrationPop.m */; };
+		5DC18E452EA88CB000473FDE /* OpmQRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC18E422EA88CB000473FDE /* OpmQRModel.m */; };
+		5DC18E462EA88CB000473FDE /* OpmScanVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC18E3C2EA88CB000473FDE /* OpmScanVC.m */; };
+		5DC18E472EA88CB000473FDE /* OpmScanViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC18E3F2EA88CB000473FDE /* OpmScanViewModel.m */; };
+		5DC18E4A2EA8BB9100473FDE /* PMPHShopBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DC18E492EA8BB9100473FDE /* PMPHShopBadgeButton.m */; };
 		5DCCF50D2B171E3F001F6230 /* RADataObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCF5072B171E3E001F6230 /* RADataObject.m */; };
 		5DCCF50E2B171E3F001F6230 /* RATableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCF50A2B171E3E001F6230 /* RATableViewCell.m */; };
 		5DCCF50F2B171E3F001F6230 /* RAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCCF50B2B171E3F001F6230 /* RAViewController.m */; };
 		5DCCF5102B171E3F001F6230 /* RATableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DCCF50C2B171E3F001F6230 /* RATableViewCell.xib */; };
+		5DCFEEC12EA8CC79008C2D73 /* JYPMPHZZSMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFEEC02EA8CC79008C2D73 /* JYPMPHZZSMPageControl.m */; };
 		7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B12238D9CE7009B33E3 /* RadianLayerView.m */; };
 		7C001B16238D9CE7009B33E3 /* PopAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B13238D9CE7009B33E3 /* PopAlertView.m */; };
 		7C001B19238D9D60009B33E3 /* PreHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C001B17238D9D60009B33E3 /* PreHelper.m */; };
@@ -159,6 +165,16 @@
 		5DA286562EA77CE300B777AB /* HUDVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDVC.m; sourceTree = "<group>"; };
 		5DA286572EA77CE300B777AB /* BannerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerVC.h; sourceTree = "<group>"; };
 		5DA286582EA77CE300B777AB /* BannerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerVC.m; sourceTree = "<group>"; };
+		5DC18E372EA880A800473FDE /* ProjectMigrationPop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProjectMigrationPop.h; sourceTree = "<group>"; };
+		5DC18E382EA880A800473FDE /* ProjectMigrationPop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProjectMigrationPop.m; sourceTree = "<group>"; };
+		5DC18E3B2EA88CB000473FDE /* OpmScanVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpmScanVC.h; sourceTree = "<group>"; };
+		5DC18E3C2EA88CB000473FDE /* OpmScanVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpmScanVC.m; sourceTree = "<group>"; };
+		5DC18E3E2EA88CB000473FDE /* OpmScanViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpmScanViewModel.h; sourceTree = "<group>"; };
+		5DC18E3F2EA88CB000473FDE /* OpmScanViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpmScanViewModel.m; sourceTree = "<group>"; };
+		5DC18E412EA88CB000473FDE /* OpmQRModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpmQRModel.h; sourceTree = "<group>"; };
+		5DC18E422EA88CB000473FDE /* OpmQRModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpmQRModel.m; sourceTree = "<group>"; };
+		5DC18E482EA8BB9100473FDE /* PMPHShopBadgeButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PMPHShopBadgeButton.h; sourceTree = "<group>"; };
+		5DC18E492EA8BB9100473FDE /* PMPHShopBadgeButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PMPHShopBadgeButton.m; sourceTree = "<group>"; };
 		5DCCF5062B171E3E001F6230 /* RADataObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RADataObject.h; sourceTree = "<group>"; };
 		5DCCF5072B171E3E001F6230 /* RADataObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RADataObject.m; sourceTree = "<group>"; };
 		5DCCF5082B171E3E001F6230 /* RATableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RATableViewCell.h; sourceTree = "<group>"; };
@@ -166,6 +182,8 @@
 		5DCCF50A2B171E3E001F6230 /* RATableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RATableViewCell.m; sourceTree = "<group>"; };
 		5DCCF50B2B171E3F001F6230 /* RAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAViewController.m; sourceTree = "<group>"; };
 		5DCCF50C2B171E3F001F6230 /* RATableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RATableViewCell.xib; sourceTree = "<group>"; };
+		5DCFEEBF2EA8CC79008C2D73 /* JYPMPHZZSMPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JYPMPHZZSMPageControl.h; path = ../../../../IRenWei/zenzhi/master/irenwei_zzfw/JYPMPHZZ/JYPMPHZZ/controllers/libiary/JYPMPHZZSMPageControl.h; sourceTree = "<group>"; };
+		5DCFEEC02EA8CC79008C2D73 /* JYPMPHZZSMPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JYPMPHZZSMPageControl.m; path = ../../../../IRenWei/zenzhi/master/irenwei_zzfw/JYPMPHZZ/JYPMPHZZ/controllers/libiary/JYPMPHZZSMPageControl.m; sourceTree = "<group>"; };
 		7C001B11238D9CE7009B33E3 /* RadianLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RadianLayerView.h; sourceTree = "<group>"; };
 		7C001B12238D9CE7009B33E3 /* RadianLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RadianLayerView.m; sourceTree = "<group>"; };
 		7C001B13238D9CE7009B33E3 /* PopAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopAlertView.m; sourceTree = "<group>"; };
@@ -253,6 +271,8 @@
 				5DA286322EA7799800B777AB /* FloatingView.m */,
 				2559C81E22B8CFBF00235C6C /* IBDesignableImageView.h */,
 				2559C82222B8CFBF00235C6C /* IBDesignableImageView.m */,
+				5DCFEEBF2EA8CC79008C2D73 /* JYPMPHZZSMPageControl.h */,
+				5DCFEEC02EA8CC79008C2D73 /* JYPMPHZZSMPageControl.m */,
 				121BE4FF27619CB900C2475E /* JYPPTTopView.h */,
 				121BE4FE27619CB800C2475E /* JYPPTTopView.m */,
 				2559C82322B8CFBF00235C6C /* LayerButton.h */,
@@ -267,9 +287,12 @@
 				5DA285F12EA7606700B777AB /* OpmToast.m */,
 				5DA2863E2EA779DA00B777AB /* OrderProcessAlert.h */,
 				5DA2863F2EA779DA00B777AB /* OrderProcessAlert.m */,
+				5DC18E482EA8BB9100473FDE /* PMPHShopBadgeButton.h */,
+				5DC18E492EA8BB9100473FDE /* PMPHShopBadgeButton.m */,
 				7C001B14238D9CE7009B33E3 /* PopAlertView.h */,
 				7C001B13238D9CE7009B33E3 /* PopAlertView.m */,
 				2559C82D22B8E48E00235C6C /* ProgressViews */,
+				5DC18E392EA880A800473FDE /* ProjectMigrationAlert */,
 				7C001B11238D9CE7009B33E3 /* RadianLayerView.h */,
 				7C001B12238D9CE7009B33E3 /* RadianLayerView.m */,
 				2559C80F22B8879C00235C6C /* TextViewKeyBoardToolBar.h */,
@@ -341,6 +364,52 @@
 			path = Banner;
 			sourceTree = "<group>";
 		};
+		5DC18E392EA880A800473FDE /* ProjectMigrationAlert */ = {
+			isa = PBXGroup;
+			children = (
+				5DC18E372EA880A800473FDE /* ProjectMigrationPop.h */,
+				5DC18E382EA880A800473FDE /* ProjectMigrationPop.m */,
+			);
+			path = ProjectMigrationAlert;
+			sourceTree = "<group>";
+		};
+		5DC18E3D2EA88CB000473FDE /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5DC18E3B2EA88CB000473FDE /* OpmScanVC.h */,
+				5DC18E3C2EA88CB000473FDE /* OpmScanVC.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		5DC18E402EA88CB000473FDE /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5DC18E3E2EA88CB000473FDE /* OpmScanViewModel.h */,
+				5DC18E3F2EA88CB000473FDE /* OpmScanViewModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		5DC18E432EA88CB000473FDE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5DC18E412EA88CB000473FDE /* OpmQRModel.h */,
+				5DC18E422EA88CB000473FDE /* OpmQRModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		5DC18E442EA88CB000473FDE /* 二维码 */ = {
+			isa = PBXGroup;
+			children = (
+				5DC18E3D2EA88CB000473FDE /* view */,
+				5DC18E402EA88CB000473FDE /* viewModel */,
+				5DC18E432EA88CB000473FDE /* model */,
+			);
+			path = "二维码";
+			sourceTree = "<group>";
+		};
 		5DCCF5052B171DFF001F6230 /* RATree */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +460,7 @@
 				5D41EF842E40964300CFFE84 /* CustomTabBarController.m */,
 				5D1C9D682EA2413E00787118 /* CustomNavigationController.h */,
 				5D1C9D692EA2413E00787118 /* CustomNavigationController.m */,
+				5DC18E442EA88CB000473FDE /* 二维码 */,
 				5DA2864A2EA77C7600B777AB /* Banner */,
 				5DA285F62EA7659900B777AB /* Tools */,
 				2559C81922B8CFBF00235C6C /* category */,
@@ -514,9 +584,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Controls/Pods-Controls-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Controls/Pods-Controls-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -560,12 +634,15 @@
 				94F961AC2E3D2CBD00C4A427 /* OpmActivityIndicatorView.m in Sources */,
 				941AC9EE2E34ACE70064EC42 /* PortraitViewController.m in Sources */,
 				2559C82822B8CFBF00235C6C /* LayerButton.m in Sources */,
+				5DC18E4A2EA8BB9100473FDE /* PMPHShopBadgeButton.m in Sources */,
 				7CA4CC9F2111AE8800F55EB6 /* ViewController.m in Sources */,
 				5DA286402EA779DA00B777AB /* OrderProcessAlert.m in Sources */,
 				5D41EF852E40964300CFFE84 /* CustomTabBarController.m in Sources */,
 				7CA4CCAA2111AE8A00F55EB6 /* main.m in Sources */,
 				5D1C9D6A2EA2413E00787118 /* CustomNavigationController.m in Sources */,
+				5DC18E3A2EA880A800473FDE /* ProjectMigrationPop.m in Sources */,
 				7C001B15238D9CE7009B33E3 /* RadianLayerView.m in Sources */,
+				5DCFEEC12EA8CC79008C2D73 /* JYPMPHZZSMPageControl.m in Sources */,
 				2559C82922B8CFBF00235C6C /* IBDesignableImageView.m in Sources */,
 				5D786CA6237D31FB00373814 /* UILabel+Insets.m in Sources */,
 				5DCCF50E2B171E3F001F6230 /* RATableViewCell.m in Sources */,
@@ -576,6 +653,9 @@
 				121BE50027619CB900C2475E /* JYPPTTopView.m in Sources */,
 				5DA286592EA77CE300B777AB /* BannerVC.m in Sources */,
 				5DA2865A2EA77CE300B777AB /* HUDVC.m in Sources */,
+				5DC18E452EA88CB000473FDE /* OpmQRModel.m in Sources */,
+				5DC18E462EA88CB000473FDE /* OpmScanVC.m in Sources */,
+				5DC18E472EA88CB000473FDE /* OpmScanViewModel.m in Sources */,
 				5D1C9D3E2EA2367900787118 /* WJCountDownButton.m in Sources */,
 				941AC9E12E34A10C0064EC42 /* OrientationManager.m in Sources */,
 				5DA286142EA7779900B777AB /* NSObject+property.m in Sources */,

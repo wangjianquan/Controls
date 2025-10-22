@@ -27,8 +27,6 @@
 
     ALGCDTimer *timer = [[self alloc] init];
     timer.block = block;
-    
-    
     timer.source = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER,
                                           0, 0,
                                           dispatch_get_main_queue());
@@ -42,7 +40,7 @@
     return timer;
 }
 
-- (void)invalidate {
+- (void)invalidate{
     if (self.source) {
         dispatch_source_cancel(self.source);
         self.source = nil;
@@ -50,11 +48,11 @@
     self.block = nil;
 }
 
-- (void)dealloc {
+- (void)dealloc{
     [self invalidate];
 }
 
-- (void)fire {
+- (void)fire{
     self.block();
 }
 @end

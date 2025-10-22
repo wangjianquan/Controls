@@ -1,52 +1,48 @@
 //
-//  OrderProcessAlert.m
+//  ProjectMigrationPop.m
 //  Controls
 //
-//  Created by WJQ on 2019/12/3.
-//  Copyright © 2019 WJQ. All rights reserved.
+//  Created by jieyue on 2022/10/13.
+//  Copyright © 2022 WJQ. All rights reserved.
 //
 
-#import "OrderProcessAlert.h"
+#import "ProjectMigrationPop.h"
 
-@interface OrderProcessAlert()
+@interface ProjectMigrationPop()
 
 @property (nonatomic, copy) NSString *desc;
-/**
- 按钮标题数组只读属性
- */
-@property (nonatomic, strong) NSArray  * titles;
+/** 按钮标题数组只读属性 */
 @property (nonatomic, strong) UIView *contentView;
 
 @end
-
 #define Ratio_375 (SCREEN_WIDTH/375.0)
 /**转换成当前比例的数*/
 #define Ratio(x) ((int)((x) * Ratio_375))
 #define DEFAULT_MAX_HEIGHT SCREEN_HEIGHT/3*2
 #define YB_SAFE_BLOCK(BlockName, ...) ({ !BlockName ? nil : BlockName(__VA_ARGS__); })
 
-@implementation OrderProcessAlert
+@implementation ProjectMigrationPop
 
-+ (void)showOrderProcessAlert:(NSString *)description buttonTitles:(NSArray *)btnTitles otherSettings:(void (^)(OrderProcessAlert * _Nonnull))otherSetting{
-    
-    OrderProcessAlert * alert = [[OrderProcessAlert alloc]initWithDes:description buttonTitles:btnTitles];
++ (void)showAlert:(NSString *)description otherSettings:(void (^)(ProjectMigrationPop * _Nonnull))otherSetting
+{
+    ProjectMigrationPop * alert = [[ProjectMigrationPop alloc] initWithDes:description];
     YB_SAFE_BLOCK(otherSetting,alert);
     [[UIApplication sharedApplication].delegate.window addSubview:alert];
 }
 
-- (instancetype)initWithDes:(NSString *)description buttonTitles:(NSArray *)titles
+- (instancetype)initWithDes:(NSString *)description
 {
     self = [super init];
     if (self) {
         self.desc = description;
-        self.titles = titles;
         [self setupUI];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(cancelAction) name:@"DISMISS_PROJECT_MIGRATION_NOTIFICATION" object:nil];
     }
     return self;
 }
-- (void)setupUI{
-    self.frame = [UIScreen mainScreen].bounds;
+- (void)setupUI
+{
+    self.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
     self.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.3/1.0];
     
     //获取更新内容高度
@@ -64,8 +60,7 @@
     if (realHeight > DEFAULT_MAX_HEIGHT) {
         scrollEnabled = YES;
         descHeight = DEFAULT_MAX_HEIGHT - Ratio(208);
-    }else
-    {
+    } else {
         maxHeight = realHeight;
     }
     
@@ -110,54 +105,32 @@
         [descTextView flashScrollIndicators];
     }
     
-//    //更新按钮
-//    UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    sureButton.backgroundColor = [UIColor redColor];
-//    sureButton.clipsToBounds = YES;
-//    sureButton.layer.cornerRadius = 2.0f;
-//    [sureButton addTarget:self action:@selector(sureBtnAction) forControlEvents:UIControlEventTouchUpInside];
-//    [sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [contentView addSubview:sureButton];
-//
-//    //取消按钮
-//    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeSystem];
-//    cancelButton.backgroundColor = [UIColor redColor];
-//    cancelButton.clipsToBounds = YES;
-//    cancelButton.layer.cornerRadius = 2.0f;
-//    [cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
-//    [cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-//    [contentView addSubview:cancelButton];
-//    if (self.titles.count == 1) {
-//
-//    }
-    for (int i = 0; i<self.titles.count; i++) {
-        UIButton * btn = [UIButton buttonWithType:UIButtonTypeSystem];
-        if (self.titles.count == 1) {
-            btn.frame = CGRectMake(Ratio(25), maxHeight - Ratio(20) - Ratio(40), contentView.frame.size.width - Ratio(50), Ratio(40));
-            btn.backgroundColor = [UIColor redColor];
-            [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    CGFloat btnWidth = (contentView.frame.size.width - Ratio(50)-10)/2;
+    //取消按钮
+    UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(Ratio(25), maxHeight - Ratio(20) - Ratio(40), btnWidth, Ratio(40));
+    cancelButton.backgroundColor = [UIColor whiteColor];
+    cancelButton.clipsToBounds = YES;
+    cancelButton.layer.cornerRadius = 2.0f;
+    [cancelButton addTarget:self action:@selector(cancelAction) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton setTitle:@"取消" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+    cancelButton.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    cancelButton.layer.borderWidth = 1.0f;
+    [contentView addSubview:cancelButton];
+    
+    //更新按钮
+    UIButton *sureButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    sureButton.frame = CGRectMake(Ratio(25) + (10+btnWidth), maxHeight - Ratio(20) - Ratio(40), btnWidth, Ratio(40));
+    sureButton.backgroundColor = [UIColor redColor];
+    sureButton.clipsToBounds = YES;
+    sureButton.layer.cornerRadius = 2.0f;
+    [sureButton addTarget:self action:@selector(sureBtnAction) forControlEvents:UIControlEventTouchUpInside];
+    [sureButton setTitle:@"更新" forState:UIControlStateNormal];
+    [sureButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [contentView addSubview:sureButton];
 
-        }else if (self.titles.count == 2){
-//            btn.frame = CGRectMake(15+i*(30+(kMAIN_SCREEN_WIDTH-15*2-30*2)/3), 44+4, (kMAIN_SCREEN_WIDTH-15*2-30*2)/3, 36);
-
-            CGFloat btnWidth = (contentView.frame.size.width - Ratio(50)-10)/2;
-            btn.frame = CGRectMake(Ratio(25) + i *(10+btnWidth), maxHeight - Ratio(20) - Ratio(40), btnWidth, Ratio(40));
-            if (i == 0) {
-                [btn setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
-                btn.layer.borderColor = [UIColor lightGrayColor].CGColor;
-                btn.layer.borderWidth = 1.0f;
-            } else {
-                btn.backgroundColor = [UIColor redColor];
-                [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            }
-        }
-        [btn setTitle:self.titles[i] forState:(UIControlStateNormal)];
-        btn.tag = i;
-        btn.clipsToBounds = YES;
-        btn.layer.cornerRadius = 3.0f;
-        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [contentView addSubview:btn];
-    }
+    
     //显示更新
     [self showWithAlert:bgView];
 }
@@ -167,31 +140,23 @@
     self.contentView.cornerRadius = _cornerRadius;
 }
 
-- (void)btnAction:(UIButton * )sender{
-   
-    if ([self.delegate respondsToSelector:@selector(orderProcessAlertSureBtnAction:)]) {
-        [self.delegate orderProcessAlertSureBtnAction:sender.titleLabel.text];
-    }
-    [self dismissAlert];
-
-}
-/** 更新按钮点击事件 跳转AppStore更新 */
-- (void)sureBtnAction
-{
+#pragma mark -- 更新按钮点击事件 跳转AppStore更新
+- (void)sureBtnAction{
 //    NSString *appId = @"1280760449";
 //    NSString *str = [NSString stringWithFormat:@"http://itunes.apple.com/us/app/id%@", appId];
 //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str]];
+    
+    NSString *urlString = @"https://apps.apple.com/cn/app/id1543135681";
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlString] options:@{} completionHandler:^(BOOL success) {
+        }];
     [self dismissAlert];
 }
 
-/** 取消按钮点击事件 */
+#pragma mark -- 取消按钮点击事件
 - (void)cancelAction{
     [self dismissAlert];
 }
-
-/**
-  *添加Alert入场动画
-*/
+#pragma mark -- 添加Alert入场动画
 - (void)showWithAlert:(UIView *)alert{
     CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
     animation.duration = 0.6f;
@@ -204,18 +169,13 @@
     animation.values = values;
     [alert.layer addAnimation:animation forKey:nil];
 }
-
-/**
-  *添加Alert出场动画
- */
+#pragma mark -- 添加Alert出场动画
 - (void)dismissAlert{
     [UIView animateWithDuration:0.6f animations:^{
         self.transform = (CGAffineTransformMakeScale(1.5, 1.5));
         self.backgroundColor = [UIColor clearColor];
         self.alpha = 0;
     }completion:^(BOOL finished) {
-       
-//        self.delegate = nil;
         [self removeFromSuperview];
     } ];
 }
@@ -231,13 +191,5 @@
 {
     return [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:font} context:nil].size;
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

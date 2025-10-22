@@ -13,6 +13,7 @@
 #import "RAViewController.h"
 #import "PortraitViewController.h"
 #import "TextViewController.h"
+#import "DebugViewController.h"
 
 // 颜色常量
 #define TABBAR_NORMAL_COLOR     [UIColor darkGrayColor]
@@ -133,7 +134,7 @@
         // 根据索引创建不同控制器
         switch (i) {
             case 0: vc = [[ViewController alloc] init]; break;
-            case 1: vc = [[RAViewController alloc] init]; break;
+            case 1: vc = [[DebugViewController alloc] init]; break;
             case 2: vc = [[PortraitViewController alloc] init]; break;
             case 3: vc = [[TextViewController alloc] init]; break;
         }

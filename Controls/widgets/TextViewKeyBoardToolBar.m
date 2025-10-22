@@ -3,7 +3,7 @@
 //  YunTingKeTang
 //
 //  Created by wjq on 2019/6/17.
-//  Copyright © 2019 西安三八妇乐. All rights reserved.
+//  Copyright © 2019 wjq. All rights reserved.
 //
 
 #import "TextViewKeyBoardToolBar.h"

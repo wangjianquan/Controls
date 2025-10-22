@@ -10,23 +10,24 @@
 #import "iCarousel.h"
 #import "ALBannerModel.h"
 #import "ALGCDTimer.h"
-#import "MaskView.h"
-@interface ALBannerView ()<iCarouselDelegate,iCarouselDataSource>
-{
+#import "SDWebImage.h"
+#import "JYPMPHZZSMPageControl.h"
+
+@interface ALBannerView ()<iCarouselDelegate,iCarouselDataSource>{
+    NSMutableArray * _data;//轮播图模型数
     ALGCDTimer  *_imageStepTimer;
 
 }
-@property (nonatomic, strong) UIView *contentView;
-@property (nonatomic, strong) iCarousel *carousel;
-@property (nonatomic, strong) MaskView * leftMaskView;
-@property (nonatomic, strong) MaskView * rightMaskView;
 
-@property (nonatomic, strong) UIPageControl *pageControl;
+@property (nonatomic, strong) iCarousel *carousel;
+
+@property (nonatomic, strong) JYPMPHZZSMPageControl *pageControl;
 @property (nonatomic, strong) NSMutableArray *bannerSource;
 
 @end
 
 @implementation ALBannerView
+
 - (NSMutableArray *)bannerSource{
     if (!_bannerSource) {
         _bannerSource = [[NSMutableArray alloc]init];
@@ -34,24 +35,6 @@
     return _bannerSource;
 }
 
--(MaskView *)leftMaskView{
-    if (_leftMaskView== nil){
-        _leftMaskView = [[MaskView alloc] init];
-    }
-    return _leftMaskView;
-}
--(MaskView *)rightMaskView{
-    if (_rightMaskView== nil){
-        _rightMaskView = [[MaskView alloc] init];
-    }
-    return _rightMaskView;
-}
-- (UIView *)contentView{
-    if (!_contentView) {
-        _contentView = [[UIView alloc]init];
-    }
-    return _contentView;
-}
 - (iCarousel *)carousel{
     if (!_carousel) {
         _carousel               = [[iCarousel alloc]init];
@@ -59,24 +42,25 @@
         _carousel.delegate      = self;
         _carousel.dataSource    = self;
         _carousel.pagingEnabled = YES;
+        _carousel.layer.cornerRadius = 8;
+        _carousel.layer.masksToBounds = YES;
     }
     return _carousel;
 }
 
--(UIPageControl *)pageControl{
+-(JYPMPHZZSMPageControl *)pageControl{
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc] init];
+        _pageControl = [[JYPMPHZZSMPageControl alloc] initWithFrame:CGRectZero];
         _pageControl.userInteractionEnabled = NO;
-//        _pageControl.pageIndicatorImage = [UIImage al_imageNamed:@"al_banner_inactiveImage"];
-//        _pageControl.currentPageIndicatorImage = [UIImage al_imageNamed:@"al_sele_banner_page"];
-//        [_pageControl sizeToFit];
+        _pageControl.pageIndicatorImage = [UIImage imageNamed:@"al_banner_inactiveImage"];
+        _pageControl.currentPageIndicatorImage = [UIImage imageNamed:@"al_sele_banner_page"];
+        _pageControl.alignment = SMPageControlAlignmentRight;
+        [_pageControl sizeToFit];
     }
     return _pageControl;
 }
 
-
 - (void)dealloc {
-
     [self freeSpeedTimer];
 }
 
@@ -87,6 +71,7 @@
     }
     return self;
 }
+
 - (instancetype)initWithFrame:(CGRect)frame{
     self = [super initWithFrame:frame];
     if (self) {
@@ -104,29 +89,19 @@
 }
 
 - (void)setupUI{
-    [self addSubview:self.contentView];
-    [self addSubview:self.leftMaskView];
-    [self addSubview:self.rightMaskView];
+    self.backgroundColor = [UIColor redColor];
     [self addSubview:self.carousel];
     [self addSubview:self.pageControl];
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
-    self.backgroundColor = [UIColor whiteColor];
-    self.contentView.backgroundColor = [UIColor brownColor];
-    
-    
     CGFloat carousel_Width = CGRectGetWidth(self.frame);
-    CGFloat carousel_Height = CGRectGetHeight(self.frame)*0.618;
-    CGFloat carousel_Y = CGRectGetHeight(self.frame)-carousel_Height;
-    CGFloat pageControlHeight = 23;
-    
-    _contentView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height-carousel_Height/2);
-    _leftMaskView.frame = CGRectMake(-10, 0, self.frame.size.width + 10, self.frame.size.height - 30);
-    _rightMaskView.frame = CGRectMake(0, 0, self.frame.size.width + 10, self.frame.size.height - 30);
-    _carousel.frame = CGRectMake(0, carousel_Y-10, carousel_Width, carousel_Height);
-    _pageControl.frame = CGRectMake(0, CGRectGetMaxY(_carousel.frame) - pageControlHeight,self.frame.size.width, pageControlHeight);
+    CGFloat carousel_Height = CGRectGetHeight(self.frame);
+    CGFloat page_H = 30;
+   
+    self.carousel.frame = CGRectMake(0, 15, carousel_Width, carousel_Height-2*15);
+    self.pageControl.frame = CGRectMake(20, CGRectGetMaxY(self.carousel.frame)-page_H,carousel_Width-40, page_H);
 }
 
 - (void)setLoadBanner:(BOOL)loadBanner{
@@ -171,6 +146,21 @@
 
 //}
 
+- (void)setDataSource:(NSMutableArray *)dataSource{
+    if (dataSource.count == 0) {
+        return;
+    }
+    [self freeSpeedTimer];
+    self.bannerSource = dataSource;
+    [_carousel scrollToItemAtIndex:0 animated:NO];
+    [self.carousel reloadData];
+    
+    self.pageControl.numberOfPages = self.bannerSource.count;
+    self.carousel.currentItemIndex = 0;
+    self.pageControl.currentPage = 0;
+    
+    [self createSpeedTimer];
+}
 
 - (void)freeSpeedTimer {
     if (_imageStepTimer) {
@@ -183,8 +173,8 @@
     [self freeSpeedTimer];
     __block id weakSelf = self;
     _imageStepTimer = [ALGCDTimer repeatingTimerWithTimeInterval:3 block:^{
-                                                            [weakSelf changeToNextImage];
-                                                        }];
+        [weakSelf changeToNextImage];
+    }];
 }
 - (void)changeToNextImage {
     if (_carousel.numberOfItems > 0) {
@@ -203,13 +193,14 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view
 {
-
     UIImageView *imageView = nil;
-//    ALBannerModel *model = [_bannerSource objectAtIndex:index];
+    ALBannerModel *model = nil;
+    if (index >= 0 && index < _bannerSource.count) {
+        model = [_bannerSource objectAtIndex:index];
+    }
     if (view) {
         imageView = (UIImageView *)view;
-        
-//        [imageView sd_cancelCurrentImageLoad];
+        [imageView sd_cancelCurrentImageLoad];
         imageView.image = nil;
     } else {
         imageView = [[UIImageView alloc] init];
@@ -217,22 +208,17 @@
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         CGFloat imageWidth = CGRectGetWidth(_carousel.frame) - 40;
         imageView.frame = CGRectMake(0, 0, imageWidth, CGRectGetHeight(_carousel.frame));
-        imageView.layer.cornerRadius = 5;
+        imageView.layer.cornerRadius = 8;
         imageView.clipsToBounds = YES;
     }
-
-    /* 加载image url地址
-     NSURL *url = [NSURL URLWithString:model.path];
-
-         [imageView sd_setImageWithURL:url
-                       placeholderImage:nil
-                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                                  if (!image || error) {
-     //                                 imageView.image = [UIImage al_imageNamed:@"al_banner_default"];
-                                  }
-         }];
-     */
-//    NSString * image = self.bannerSource[index];
+   
+//    NSURL *url = [NSURL URLWithString:model.path];
+//    [imageView sd_setImageWithURL:url placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+//        if (!image || error) {
+//            imageView.image = [UIImage imageNamed:@"al_banner_default"];
+//        }
+//    }];
+    //本地数据，模拟
     imageView.image = [UIImage imageNamed:self.bannerSource[index]];
     return imageView;
 }
@@ -247,92 +233,19 @@
     }
     return value;
 }
-- (void)carouselCurrentItemIndexDidChange:(iCarousel *)carousel
-{
-    NSLog(@"Index: %@", @(_carousel.currentItemIndex));
-}
-//- (void)carouselDidScroll:(iCarousel *)carousel{
-//    CGFloat curretContentOffset = carousel.scrollOffset;
-//    NSInteger index = curretContentOffset/SCREEN_WIDTH;
-//    NSLog(@"index  %ld",index);
-//    if (carousel.isDragging || carousel.isDecelerating){
-//        if (curretContentOffset <= 1 && curretContentOffset >= -1){
-//
-//            NSLog(@">>>>>>");
-//            [UIView animateWithDuration:1 animations:^{
-//                [self.leftMaskView setRadius:(SCREEN_WIDTH *self->_carousel.currentItemIndex - curretContentOffset)*2  direction:BannerSrollDirectionRight];
-//                [self.rightMaskView setRadius:0  direction:BannerSrollDirectionLeft];
-//            }];
-//
-//        }else{
-//            NSLog(@"<<<<<<");
-//
-//            [UIView animateWithDuration:1 animations:^{
-//                [self.leftMaskView setRadius:0 direction:BannerSrollDirectionRight];
-//                [self.rightMaskView setRadius:(SCREEN_WIDTH *self->_carousel.currentItemIndex - curretContentOffset)*2   direction:BannerSrollDirectionLeft];
-//            }];
-//        }
-//    }
-//    else{
-//        if (curretContentOffset > 0){
-//
-//
-//
-//            [UIView animateWithDuration:1 animations:^{
-//                [self.leftMaskView setRadius:(curretContentOffset - SCREEN_WIDTH * self->_carousel.currentItemIndex )*2  direction:BannerSrollDirectionRight];
-//                [self.rightMaskView setRadius:0  direction:BannerSrollDirectionLeft];
-//            }];
-//
-//        }else{
-//
-//
-//            [UIView animateWithDuration:1 animations:^{
-//                [self.leftMaskView setRadius:0 direction:BannerSrollDirectionRight];
-//                [self.rightMaskView setRadius:(curretContentOffset - SCREEN_WIDTH * self->_carousel.currentItemIndex )*2   direction:BannerSrollDirectionLeft];
-//            }];
-//        }
-//    }
-//}
-- (void)carouselWillBeginScrollingAnimation:(iCarousel *)carousel{
-        NSLog(@"WillBeginScrollingAnimation");
-}
-
 - (void)carouselDidEndScrollingAnimation:(iCarousel *)carousel{
     _pageControl.currentPage = carousel.currentItemIndex;
-//    self.contentView.backgroundColor = [PreHelper randomColor];
-
 }
 
-- (void)carouselWillBeginDragging:(iCarousel *)carousel{
-    NSLog(@"carouselWillBeginDragging");
-
-    NSLog(@"%@",carousel.currentItemView);
-
-}
-- (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate{
-    NSLog(@"carouselDidEndDragging");
-
-}
-
-
-
-#pragma mark -
 #pragma mark iCarousel taps
-- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index
-{
+- (void)carousel:(iCarousel *)carousel didSelectItemAtIndex:(NSInteger)index{
     if (index < 0 || index >= self.bannerSource.count) {
-           return;
+        return;
     }
-    if (_bannerSelectBlock) {
-        _bannerSelectBlock(index);
-    }
-//    ALBannerModel *model = [_bannerSource objectAtIndex:index];
-//    //type:类型 Goods跳转至商品，url跳转网页，Catalog 栏目
-//    if ([model.type isEqualToString:@"Goods"]) {
-//    } else if([model.type isEqualToString:@"url"]) {
-//    } else if([model.type isEqualToString:@"Catalog"]) {
+//    ALBannerModel * moel = self.bannerSource[index];
+//    if (_bannerSelectBlock) {
+//        _bannerSelectBlock(moel);
 //    }
-//    DLog(@"Tapped view : %@", model.point);
 }
 #pragma mark - 自定义carousel动画 (carousel.type = iCarouselTypeCustom)
 - (CATransform3D)carousel:(iCarousel *)carousel itemTransformForOffset:(CGFloat)offset baseTransform:(CATransform3D)transform {
@@ -354,6 +267,7 @@
 
     return CATransform3DTranslate(transform, offset * self.carousel.itemWidth * 1.4, 0.0, 0.0);
 }
+
 
 /*
 // Only override drawRect: if you perform custom drawing.
